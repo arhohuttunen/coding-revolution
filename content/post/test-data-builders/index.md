@@ -296,7 +296,7 @@ There is one pitfall in this approach, though. Let's take a look at another exam
                 .with(anOrderItem().withName("Tea cup").withQuantity(1));
 
         Order orderWithDiscount = coffeeMugAndTeaCup.withDiscountRate(0.1).build();
-        Order orderWithCouponCode = coffeeMugAndTeaCup.withGiftVoucher("HALFOFF").build();
+        Order orderWithCouponCode = coffeeMugAndTeaCup.withCouponCode("HALFOFF").build();
     }
 ```
 
