@@ -1,15 +1,16 @@
 ---
 title: How to Create a Test Data Builder
+subtitle: Remove duplication and increase expressiveness
 date: 2021-02-27
 author: Arho Huttunen
-summary: The purpose of the test data builder pattern is to make it easy to create objects for tests. Learn how to write descriptive test data builders.
+summary: Learn how to use the test data builder pattern to make it easy to create objects for tests. Learn how to reduce boilerplate code with Lombok. 
 categories:
   - Testing
 tags:
   - clean code
 ---
 
-In this article, we will learn how to write test data builders that remove duplication in constructing objects and increase the expressiveness of the test code.
+In this article, we will learn how to write test data builders that remove duplication in constructing objects and increase the expressiveness of the test code. We will also learn how to use Lombok to reduce boilerplate code around the builders.
 
 In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on the test data builder pattern.
 
