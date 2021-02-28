@@ -242,7 +242,7 @@ Using a test data builder makes it more obvious.
 
 The example should encourage introducing domain types to avoid situations like this from happening.
 
-### Simplify Code by Passing Builders As Arguments
+### Simplify Code by Passing Builders as Arguments
 
 In our builder example, the builder consumes some arguments that are objects built by other builders. If we pass those builders as arguments instead of the constructed objects, we can simplify the code by removing build methods.
 
@@ -325,7 +325,7 @@ public class OrderBuilder {
 
 By setting a default value to the `customerBuilder` field and any other fields, we provide safe values for these fields. This way, we can omit any fields that are not relevant to our test but require a value.
 
-### Emphasize Domain with Factory Methods
+### Emphasize Domain With Factory Methods
 
 There is still some noise in the tests because we have to construct various builders. We can reduce this noise by adding factory methods for the builders.
 
