@@ -18,9 +18,19 @@ In a [previous article](/dry-damp-tests), we talked about how to remove duplicat
 
 ## Constructing Test Data
 
-Constructing objects in tests can become very burdensome. In our production code, we create objects in relatively few places. However, in tests, we might be testing many scenarios and have to provide all the constructor arguments every time creating an object.
+Let's imagine we have an `Order` class with a `Customer` and a customer has an `Address`. Also, an `Order` has one or more `OrderItem`s. Furthermore, the `Order` might involve a `discountRate` or some `couponCode`.
 
-Let's take a look at an example.
+{{< figure src="order-uml.svg" caption="Orders, order items, customers and addresses" >}}
+
+We might want to test a lot of business logic around these objects:
+
+1. Check that we cannot apply a discount rate and coupon code at the same time
+2. Check that the quantity of items does not exceed the inventory balance
+3. Check that we apply different shipping rate on a foreign address
+
+For different use cases, we have to create objects in another state. In our production code, we create things in relatively few places. However, in tests, we have to provide all the constructor arguments every time creating an object.
+
+Let's take a look at a code example.
 
 ```java
 public class Order {
