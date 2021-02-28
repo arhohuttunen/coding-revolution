@@ -14,6 +14,8 @@ In this article, we will learn how to write test data builders that remove dupli
 
 In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on the test data builder pattern.
 
+{{% toc %}}
+
 ## Constructing Test Data
 
 Constructing objects in tests can become very burdensome. In our production code, we create objects in relatively few places. However, in tests, we might be testing many scenarios and have to provide all the constructor arguments every time creating an object.
@@ -24,10 +26,18 @@ Let's take a look at an example.
 public class Order {
     private final Long orderId;
     private final Customer customer;
-    private final List<OrderItem> orderItems;
+    private final List<OrderItem> orderItems = new ArrayList<>();
     private final Double discountRate;
     private final String couponCode;
     
+    public Order(Long orderId, Customer customer, Double discountRate, String couponCode) {
+        // ...
+    }
+    
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+    }
+
     // ...
 }
 
@@ -40,20 +50,78 @@ public class Customer {
 }
 ```
 
+In this example, we use constructors and immutable objects, so they do not have setter methods. The test code becomes quite hard to read.
+
 ```java
 @Test
 void constructOrder() {
-    Address address = new Address("1216  Clinton Street", "Philadelphia", "19108", null);
-    Customer customer = new Customer(1L, "Terry Tew", address);
-    Order order = new Order(1L, customer, 0.0, null);
-    order.addOrderItem(new OrderItem("Coffee mug", 1));
-    order.addOrderItem(new OrderItem("Tea cup", 1));
+    Address address = new Address("1216  Clinton Street", "Philadelphia", "19108", "Some country");
+    Customer customer = new Customer(1L, "Unimportant", address);
+    OrderItem coffeeMug = new OrderItem("Coffee mug", 1);
+    OrderItem teaCup = new OrderItem("Tea cup", 1);
+    Order orderWithDiscount = new Order(1L, customer, 0.1, null);
+    orderWithDiscount.addOrderItem(coffeeMug);
+    orderWithDiscount.addOrderItem(teaCup);
+    Order orderWithCouponCode = new Order(1L, customer, 0.0, "HALFOFF");
+    orderWithCouponCode.addOrderItem(coffeeMug);
+    orderWithCouponCode.addOrderItem(teaCup);
     
     // ...
 }
 ```
 
-In this example, we use constructors and immutable objects, so the objects do not have setter methods. The code becomes quite hard to read, and it's filled with details that are irrelevant to the behavior that we test. Also, tests become brittle because adding any new parameters will break a lot of tests.
+The code is full of details that are irrelevant to the behavior that we test. We have tried to highlight the unrelated fields by descriptive naming, but the result is very noisy. Also, tests become brittle because adding any new parameters will break a lot of tests.
+
+## Object Mother
+
+The object mother pattern is an attempt to avoid the before-mentioned problems. An object mother is a class with factory methods for different use cases in tests.
+
+Let's take a look at a couple of object mothers.
+
+```java
+public class Orders {
+    public static Order createOrderWithCustomer(Customer customer) {
+        return new Order(1L, customer, 0.0, null);
+    }
+
+    public static Order createOrderWithDiscount(Double discountRate) {
+        return new Order(1L, Customers.createCustomer(), discountRate, null);
+    }
+
+    public static Order createOrderWithCouponCode(String couponCode) {
+        return new Order(1L, Customers.createCustomer(), 0.0, couponCode);
+    }
+}
+
+public class Customers {
+    public static Customer createCustomer() {
+        return new Customer(1L, "Unimportant", Addresses.createAddress());
+    }
+
+    public static Customer createCustomerWithAddress(String name, Address address) {
+        return new Customer(1L, name, address);
+    }
+}
+
+// ...
+```
+
+Now we call our factory methods from the test code.
+
+```java
+        OrderItem coffeeMug = OrderItems.createOrderItem("Coffee Mug");
+        OrderItem teaCup = OrderItems.createOrderItem("Tea cup");
+        Order orderWithDiscount = Orders.createOrderWithDiscount(0.1);
+        orderWithDiscount.addOrderItem(coffeeMug);
+        orderWithDiscount.addOrderItem(teaCup);
+        Order orderWithCouponCode = Orders.createOrderWithCouponCode("HALFOFF");
+        orderWithCouponCode.addOrderItem(coffeeMug);
+        orderWithCouponCode.addOrderItem(teaCup);
+```
+
+The object mother pattern makes tests more readable and hides code that creates new objects. We can provide safe values for fields without having to pollute the test code with those values. It also helps with maintenance because we can reuse the code between tests.
+
+However, the object mother pattern is not flexible when test data varies. Every small change in test data requires a new factory method.
 
 ## Test Data Builders
 
@@ -147,7 +215,7 @@ Address address = new Address("1216  Clinton Street", "19108", "Philadelphia", n
 
 We have switched places for the postal code and the city. The error is not easy to spot. Using a test data builder makes it more obvious.
 
-## Passing Builders As Arguments
+### Passing Builders As Arguments
 
 In our builder example, the builder consumes some arguments that are objects built by other builders. If we pass those builders as arguments instead of the constructed objects, we can simplify the code by removing build methods.
 
@@ -195,7 +263,7 @@ Now using the builder becomes less verbose.
 class BuilderTest {
     @Test
     void buildOrder() {
-        Order order = anOrder()
+        Order order = new OrderBuilder()
                 .with(new CustomerBuilder()
                         .withName("Terry Tew")
                         .with(new AddressBuilder()
@@ -211,7 +279,7 @@ class BuilderTest {
 }
 ```
 
-## Builder Factory Methods
+### Builder Factory Methods
 
 There is still some noise in the tests because we have to construct various builders. We can reduce this noise by adding factory methods for the builders.
 
@@ -227,7 +295,11 @@ public class OrderBuilder {
 
     // ...
 }
+```
 
+By using static imports we can avoid mentioning the word "builder" in the tests.
+
+```java
 class BuilderTest {
     @Test
     void buildOrder() {
@@ -249,7 +321,7 @@ class BuilderTest {
 
 The factory methods hide a lot of details about the builders. The code is now more descriptive as it speaks in domain terms.
 
-## Creating Similar Objects
+### Creating Similar Objects
 
 If we need to create similar objects, we could use different builders for them. However, different builders lead to duplication and make it harder to spot differences.
 
@@ -341,10 +413,154 @@ Now we can make sure that the changes from previous uses do not leak to the next
 
 There is still room for human error, so if we want to be safe, we could make the "with" methods always return a copy of the builder.
 
+## Reduce Boilerplate With Lombok
+
+While the test data builder pattern provides a lot of benefits, there is also one major drawback. That is, we end up writing a lot of boilerplate code. 
+
+To tackle this problem with boilerplate, we can take advantage of the Lombok project. We can get rid of the default constructor, getters and automatically create a builder class by annotating the class with Lombok `@Data` and `@Builder` annotations.  
+
+```java
+@Data
+@Builder
+public class Order {
+    private final Long orderId;
+    private final Customer customer;
+    private final List<OrderItem> orderItems;
+    private final Double discountRate;
+    private final String couponCode;
+}
+```
+
+Lombok automatically creates a builder class and a factory method inside the class.
+
+```java
+    OrderItem coffeeMug = OrderItem.builder().name("Coffee mug").quantity(1).build();
+    OrderItem teaCup = OrderItem.builder().name("Tea cup").quantity(1).build();
+    Order order = Order.builder()
+            .orderItems(Arrays.asList(coffeeMug, teaCup))
+            .build();
+```
+
+Unfortunately, for collections, you now have to pass a collection as the builder argument. Luckily, by annotating a collection field with `@Singular`, Lombok will generate methods for single items in the collection.
+
+```java
+@Data
+@Builder
+public class Order {
+    private final Long orderId;
+    private final Customer customer;
+    @Singular
+    private final List<OrderItem> orderItems;
+    private final Double discountRate;
+    private final String couponCode;
+}
+```
+
+We can now add items to a collection by calling the method multiple times.
+
+```java
+    Order order = Order.builder()
+            .orderItem(OrderItem.builder().name("Coffee mug").quantity(1).build())
+            .orderItem(OrderItem.builder().name("Tea cup").quantity(1).build())
+            .build();
+```
+
+We have still lost a little in the readability, at least in my opinion. We have to carry the word "builder" around.
+
+However, we can configure Lombok to generate a different name for the factory method and use static imports. We can also prefix the setter methods.  
+
+```java
+@Data
+@Builder(builderMethodName = "anOrder", setterPrefix = "with")
+public class Order {
+    // ...
+}
+```
+
+Now our builder looks a lot more like the custom builder.
+
+```java
+    Order order = anOrder()
+            .withOrderItem(anOrderItem().name("Coffee mug").quantity(1).build())
+            .withOrderItem(anOrderItem().name("Tea cup").quantity(1).build())
+            .build();
+```
+
+There is still one problem, though. This code now suffers from the same problem as our custom builder when we try to vary our data. In our custom builder, we added a `but()` method to deal with this.
+
+Luckily, Lombok allows us to configure a `toBuilder()` method. 
+
+```java
+@Data
+@Builder(builderMethodName = "anOrder", toBuilder = true, setterPrefix = "with")
+public class Order {
+    // ...
+}
+```
+
+The difference here is that the `toBuilder()` is called on a constructed object, not on a builder.
+
+```java
+    Order coffeeMugAndTeaCup = anOrder()
+            .withOrderItem(anOrderItem().withName("Coffee mug").withQuantity(1).build())
+            .withOrderItem(anOrderItem().withName("Tea cup").withQuantity(1).build())
+            .build();
+
+    Order orderWithDiscount = coffeeMugAndTeaCup.toBuilder().withDiscountRate(0.1).build();
+    Order orderWithCouponCode = coffeeMugAndTeaCup.toBuilder().withCouponCode("HALFOFF").build();
+```
+
+Now Lombok builder is pretty close to the expressiveness of our custom builder.
+
+The obvious benefit of using Lombok is that we get rid of a lot of boilerplate code. However, our code is also a little noisier because we have to write, e.g.:
+
+```java
+    .withOrderItem(anOrderItem().withName("Coffee mug").withQuantity(1).build())
+```
+
+Instead of:
+
+```java
+    .with(anOrderItem().withName("Coffee mug").withQuantity(1))
+```
+
+There is one more issue, though. There are no safe default values for our fields. We could add default values in our production code, but it's not a good idea to do that only for tests.
+
+### Combine With Object Mothers
+
+To deal with the problem of not having safe default values, we can take the idea of the object mother pattern and use that together with our Lombok-generated builders. 
+
+```java
+public class Orders {
+    public static Order.OrderBuilder anOrder() {
+        return Order.anOrder()
+                .withOrderId(1L)
+                .withCustomer(Customers.aCustomer().build())
+                .withDiscountRate(0.0);
+    }
+}
+
+public class Customers {
+    public static Customer.CustomerBuilder aCustomer() {
+        return Customer.aCustomer()
+                .withCustomerId(1L)
+                .withName("Unimportant")
+                .withAddress(Addresses.anAddress().build());
+    }
+}
+```
+
+Instead of using the Lombok-generated factory method, we can use the factory method from the object mother. The only thing we have to do is to change the static imports. Basically we are calling `Orders.anOrder()` instead of `Order.anOrder()`, for example.
+
+
+Since we cannot pass around builders as arguments, the code is still a little noisier than our custom builder. Overall, if we have a lot of things to construct, the benefit might outweigh the drawback.
+
 ## Summary
 
 Test data builders help to hide syntax noise related to creating objects and make the code easier to read. Test data builders also make the code more descriptive and the tests less brittle.
 
 Passing builders as arguments to other builders allows for making the code more compact. Using factory methods to create the builders hides the noise of constructing the builder classes.
 
-The example code for this article can be found on [GitHub](https://github.com/arhohuttunen/write-better-tests/tree/main/test-data-builder).
+We can also take advantage of the Lombok builders combined with the object mother pattern. While we lose a bit in the compactness, we reduce a lot of the boilerplate code.
+
+You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/write-better-tests/tree/main/test-data-builder).
