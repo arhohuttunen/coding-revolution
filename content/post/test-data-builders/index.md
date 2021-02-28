@@ -140,7 +140,7 @@ However, the object mother pattern is not flexible when test data varies. Every 
 
 The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) is a design pattern designed to provide a flexible solution to various object creation problems in object-oriented programming. The Builder design pattern intends to **separate the construction of a complex object from its representation**.
 
-For classes that require complex setup we can create a test data builder. The builder has a field for each constructor parameter and initializes them to safe values.
+For classes that require complex setup we can create a test data builder. The builder has a field for each constructor parameter.
 
 ```java
 public class OrderBuilder {
