@@ -16,7 +16,7 @@ In a [previous article](/dry-damp-tests), we talked about how to remove duplicat
 
 {{% toc %}}
 
-## Constructing Test Data
+## Constructing Complex Test Data
 
 Let's imagine we have an `Order` class with a `Customer` and a customer has an `Address`. Also, an `Order` has one or more `OrderItem`s. Furthermore, the `Order` might involve a `discountRate` or some `couponCode`.
 
@@ -82,7 +82,7 @@ In this example, we use constructors and immutable objects, so they do not have 
 
 The code is full of **details that are irrelevant to the behavior** that we test. We have tried to highlight the unrelated fields by descriptive naming, but the result is very noisy. Also, **tests become brittle** because adding any new parameters will break a lot of tests.
 
-## Object Mother
+## Reduce Duplication With the Object Mother Pattern
 
 The object mother pattern is an attempt to avoid the before-mentioned problems. An object mother is **a class with factory methods for different use cases** in tests.
 
@@ -136,7 +136,7 @@ The object mother pattern **makes tests more readable** and **hides code that cr
 
 However, the object mother pattern is not flexible when test data varies. Every small change in test data requires a new factory method. Having to change the object mother for a lot of different reasons violates the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).
 
-## Test Data Builders
+## Make Construction Easier With the Builder Pattern
 
 The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) is a design pattern designed to provide a flexible solution to various object creation problems in object-oriented programming. The Builder design pattern intends to **separate the construction of a complex object from its representation**.
 
@@ -242,7 +242,7 @@ Using a test data builder makes it more obvious.
 
 The example should encourage introducing domain types to avoid situations like this from happening.
 
-### Passing Builders As Arguments
+### Simplify Code by Passing Builders As Arguments
 
 In our builder example, the builder consumes some arguments that are objects built by other builders. If we pass those builders as arguments instead of the constructed objects, we can simplify the code by removing build methods.
 
@@ -291,7 +291,7 @@ Now using the builder becomes less verbose.
             .build();
 ```
 
-### Setting Safe Default Values
+### Set Safe Default Values to Hide Details
 
 If our classes expect some values to exist, our test code has to provide these values. However, a lot of times, these values might not be relevant to the test case. We want to **hide the details that are irrelevant to the test**.
 
@@ -325,7 +325,7 @@ public class OrderBuilder {
 
 By setting a default value to the `customerBuilder` field and any other fields, we provide safe values for these fields. This way, we can omit any fields that are not relevant to our test but require a value.
 
-### Builder Factory Methods
+### Emphasize Domain with Factory Methods
 
 There is still some noise in the tests because we have to construct various builders. We can reduce this noise by adding factory methods for the builders.
 
@@ -365,7 +365,7 @@ By using static imports we can avoid mentioning the word "builder" in the tests.
 
 The factory methods hide a lot of details about the builders. The code is now more descriptive as it speaks in domain terms.
 
-### Creating Similar Objects
+### Reduce Code When Creating Similar Objects
 
 If we need to create similar objects, we could use different builders for them. However, different builders lead to duplication and make it harder to spot differences.
 
@@ -558,7 +558,7 @@ Instead of:
 
 There is one more issue, though. There are no safe default values for our fields. We could add default values in our production code, but it's not a good idea to do that only for tests.
 
-### Combine With Object Mother
+### Combine Builders and Object Mothers
 
 To deal with the problem of not having safe default values, we can take the idea of the object mother pattern and use that together with our Lombok-generated builders. 
 
