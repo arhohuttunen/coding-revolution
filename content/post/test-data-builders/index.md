@@ -552,8 +552,9 @@ public class Customers {
 
 Instead of using the Lombok-generated factory method, we can use the factory method from the object mother. The only thing we have to do is to change the static imports. Basically we are calling `Orders.anOrder()` instead of `Order.anOrder()`, for example.
 
+Since we cannot pass around builders as arguments, the code is still a little noisier than our custom builder. Another drawback is that our builder will now always construct defaults for objects even if we override these values in our tests.
 
-Since we cannot pass around builders as arguments, the code is still a little noisier than our custom builder. Overall, if we have a lot of things to construct, the benefit might outweigh the drawback.
+Overall, if we have a lot of things to construct, the benefit might outweigh the drawback.
 
 ## Summary
 
