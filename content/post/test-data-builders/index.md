@@ -135,7 +135,7 @@ However, the object mother pattern is not flexible when test data varies. Every 
 
 ## Test Data Builders
 
-The builder pattern is a design pattern designed to provide a flexible solution to various object creation problems in object-oriented programming. The Builder design pattern intends to **separate the construction of a complex object from its representation**.
+The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) is a design pattern designed to provide a flexible solution to various object creation problems in object-oriented programming. The Builder design pattern intends to **separate the construction of a complex object from its representation**.
 
 For classes that require complex setup we can create a test data builder. The builder has a field for each constructor parameter and initializes them to safe values.
 
@@ -468,7 +468,7 @@ There is still room for human error, so if we want to be safe, we could make the
 
 ## Reduce Boilerplate With Lombok
 
-While the test data [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) provides a lot of benefits, there is also one major drawback. That is, we end up writing a lot of boilerplate code. 
+While the test data builder pattern provides a lot of benefits, there is also one major drawback. That is, we end up writing a lot of boilerplate code. 
 
 To tackle this problem with boilerplate, we can take advantage of the [Lombok project](https://projectlombok.org/). We can get rid of the default constructor, getters and automatically create a builder class by annotating the class with Lombok `@Data` and `@Builder` annotations.  
 
