@@ -588,6 +588,12 @@ Since we cannot pass around builders as arguments, the code is still a little **
 
 Overall, if we have a lot of things to construct, the benefit might outweigh the drawback.
 
+{{% callout note %}}
+**Additional reading:**
+
+:book: [Growing Object-Oriented Software, Guided by Tests](https://amzn.to/2O0hHTm) by Steve Freeman, Nat Pryce
+{{% /callout %}}
+
 ## :white_check_mark: Summary
 
 Test data builders help to **hide syntax noise related to creating objects** and make the code easier to read. Test data builders also **make the code more descriptive and the tests less brittle**.
