@@ -9,9 +9,14 @@
   weight = 20
 
 [[main]]
-  name = "JUnit 5"
-  url = "/junit-5-tutorial/"
+  name = "Tutorials"
+  identifier = "tutorials"
   weight = 30
+
+[[main]]
+  name = "JUnit 5"
+  parent = "tutorials"
+  url = "/junit-5-tutorial/"
 
 [[main]]
   name = "Refactoring"
