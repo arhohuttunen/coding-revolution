@@ -9,6 +9,10 @@ tags:
   - clean code
 ---
 
+In this article, we will learn different ways to improve test readability. Being able to understand what a test does increases the maintainability of the test.
+
+Tests document how the system should behave. They also act as self-verifying executable specifications. Sometimes we see these two things contradictory because of the level of details needed for different purposes.
+
 In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on test readability and expressiveness.
 
 {{% toc %}}
@@ -150,6 +154,8 @@ void returnFullNameOfUser() {
 With longer pieces of code it can definitely help to follow the patterns, but in simple cases like this it's quite unnecessary.
 
 ## :speech_balloon: Reveal Intent With Method and Variable Names
+
+
 
 ## :writing_hand: Provide Just Enough Information
 
