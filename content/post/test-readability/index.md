@@ -17,7 +17,7 @@ In a [previous article](/dry-damp-tests), we talked about how to remove duplicat
 
 {{% toc %}}
 
-## :walking: Test Names Should Describe Behaviour
+## :walking: Describe Behaviour With Test Name
 
 Naming is one of the most difficult things in programming. In tests, the name of the test should describe what is being tested and what kind of behaviour is expected.
 
@@ -153,10 +153,6 @@ void returnFullNameOfUser() {
 
 With longer pieces of code it can definitely help to follow the patterns, but in simple cases like this it's quite unnecessary.
 
-## :speech_balloon: Reveal Intent With Method and Variable Names
-
-
-
 ## :writing_hand: Provide Just Enough Information
 
 Tests can have either **too much or too little information**. Both cases affect how well we understand what behaviour a test verifies.
@@ -289,7 +285,7 @@ void returnFullNameOfUser() {
 
 However, now the setup won't have all the relevant information. It is unclear why the person is underage, or why the person has the name mentioned in the test. This is called the Mystery Guest test smell.
 
-### :compass: Provide Essential But Only Show Relevant Data
+### :compass: Provide Essential Data, Show Relevant Data
 
 Luckily, it is possible to both provide the essential information and keep the information relevant to the test. We can do that if we create a test data builder.
 
@@ -341,6 +337,160 @@ void noNeedToCatch() throws MalformedURLException {
 ```
 
 We were able to remove a lot of noise from the test. Now the test tells us exactly what is expected to happen and nothing else.
+
+## :speech_balloon: Reveal Intent
+
+Revealing intent by self-describing code is something that makes it easier to comprehend what is going on in the code.
+
+Unfortunately, it's often much neglected in test code. However, test code quality should be at least on the same level as production code!
+
+Let's take a look at few ways to do this in the tests.
+
+### :abcd: Use Self-Describing Names and Values
+
+Let's take a look at a simple example. Here we are first persisting some objects and then making an HTTP request, and finally verifying that we got the correct results.
+
+```java
+@Test
+void returnVerifiedPeople() throws Exception {
+    Person person1 = aPerson().withFirstName("John").build();
+    Person person2 = aPerson().withFirstName("Jane").withStatus(Status.VERIFIED).build();
+    personRepository.save(person1);
+    personRepository.save(person2);
+
+    client.perform(get("/person?status=VERIFIED"))
+            .andExpect(jsonPath("$.[0].firstName", is("Jane")))
+            .andExpect(jsonPath("$.*", hasSize(1)));
+}
+```
+
+Even though the example is quite simple, there is quite many things going on.
+
+- We have two people, but why are they called _John_ and _Jane_?
+- We persist these two people
+- We make an HTTP request with a query
+- We make some rather obscure looking verification
+
+I mean sure, it's a short test, and it doesn't look horrible. However, tests like this are not really skimmable.
+
+Let's do some improvements and discuss them.
+
+```java
+@Test
+void returnVerifiedPeople() throws Exception {
+    Person unverifiedPerson = aPerson().withFirstName("Unverified Person").build();
+    Person verifiedPerson = aPerson().withFirstName("Verified Person").whoIsVerified().build();
+    personRepository.save(unverifiedPerson);
+    personRepository.save(verifiedPerson);
+
+    client.perform(get("/person?status=VERIFIED"))
+            .andExpect(jsonPath("$.[0].firstName", is("Verified Person")))
+            .andExpect(jsonPath("$.*", hasSize(1)));
+}
+```
+
+We have now replaced a few things with intent-revealing naming:
+
+1. The persons are now called _Unverified Person_ and _Verified Person_. We **emphasize intent with a value**. The verification now checks for _Verified Person_ instead of just _Jane_.
+2. The person variables are not anymore `person1` and `person2`. We **emphasize intent with a variable name**.
+3. We have added a `whoIsVerified()` method to the test data builder, which hides unnecessary details. We **emphasize intent with a method name**.
+
+The test looks better, but it's nothing spectacular yet.
+
+### :man_shrugging: Use Test Helper Methods
+
+There is still a lot of details about how to perform the behaviour in the test. If we are just testing that when we request people with a verified status, do we really care how the HTTP request is made?
+
+Let's try to use some helper methods to hide even more details. We begin by extracting the persistence of the objects to a method.
+
+```java
+@Test
+void returnVerifiedPeople() throws Exception {
+    havingPersisted(aPerson().withFirstName("Unverified Person"));
+    havingPersisted(aPerson().withFirstName("Verified Person").whoIsVerified());
+
+    client.perform(get("/person?status=VERIFIED"))
+            .andExpect(jsonPath("$.[0].firstName", is("Verified Person")))
+            .andExpect(jsonPath("$.*", hasSize(1)));
+}
+
+private void havingPersisted(PersonBuilder personBuilder) {
+    personRepository.save(personBuilder.build());
+}
+
+```
+
+We have called the method `havingPersisted()`. We are passing a builder as an argument so that we don't have to call `build()` inside the test.
+
+Also, we could have called this method something like `insertIntoDatabase()` but why didn't we do so? Well, persisting the people is not the behaviour we are testing. The persistence part is a **precondition for the checked behaviour**.
+
+Next, let's extract making the request into a method.
+
+```java
+@Test
+void returnVerifiedPeople() throws Exception {
+    havingPersisted(aPerson().withFirstName("Unverified Person"));
+    havingPersisted(aPerson().withFirstName("Verified Person").whoIsVerified());
+
+    List<Person> people = requestVerifiedPeople();
+
+    assertThat(people).extracting("firstName").containsOnly("Verified Person");
+}
+
+private List<Person> requestVerifiedPeople() throws Exception {
+    String json = client.perform(get("/person?status=VERIFIED"))
+            .andReturn().getResponse().getContentAsString();
+    return toDto(json);
+}
+```
+
+We have named the method `requestVerifiedPeople()`. We are not interested in _how_ the request is done, we are only interested in _what_ **behaviour is being triggered**.
+
+We have implemented the method to parse the returned JSON and return a list of people. Now we don't have to deal with JsonPath matching, and we can use a much more fluent AssertJ assertion for the verification.
+
+### :x: Explain Failure With Assertion Messages
+
+Assertions have an intent too. When the test fails, we are supposed to know what went wrong. Let's take a look at a previous example we had.
+
+```java
+@Test
+void increasesBalanceWhenDepositIsMade() {
+    BankAccount account = new BankAccount(100);
+    account.deposit(100);
+    assertEquals(200, account.getBalance());
+}
+```
+
+If the deposit calculation had a bug, our test would fail with the following assertion message.
+
+```shell
+expected: <200> but was: <100>
+Expected :200
+Actual   :100
+```
+
+Not bad, but it's not telling what exactly went wrong. When we run a single test, it's not so bad. However, if we run a bunch of tests, it's becoming worse.
+
+Assertion frameworks allow us to provide an assertion message to make the failure more obvious. This is a feature that is not used nearly as often as it should!
+
+```java
+@Test
+void increasesBalanceWhenDepositIsMade() {
+    BankAccount account = new BankAccount(100);
+    account.deposit(100);
+    assertEquals(200, account.getBalance(), "Account balance after deposit");
+}
+```
+
+Now we can see a much more descriptive assertion message.
+
+```shell
+Account balance after deposit ==> expected: <200> but was: <100>
+Expected :200
+Actual   :100
+```
+
+It's much more obvious what the expected value 200 and actual value 100 are. The assertion message provides context.
 
 ## :white_check_mark: Summary
 
