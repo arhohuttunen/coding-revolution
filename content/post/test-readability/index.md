@@ -7,7 +7,6 @@ categories:
   - Testing
 tags:
   - clean code
-draft: true
 ---
 
 In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on test readability and expressiveness.
@@ -305,17 +304,35 @@ Neither of the tests now have any irrelevant information. The essential informat
 
 Using this pattern helps with both removing duplication and keeping the data relevant to the tested behaviour.
 
-{{% callout note %}}
-**Additional reading:**
+### Don't Catch Exceptions Unnecessarily
 
-:pencil2: [DRY and DAMP in Tests](/dry-damp-test/)
+We should not catch any exceptions in the test unless that is what we want to test. Sometimes you see the following kind of code.
 
-:pencil2: [How to Create a Test Data Builder](/test-data-builders/)
+```java
+@Test
+void unnecessaryCatching() {
+    try {
+        URL url = new URL("http://localhost");
 
-:book: [xUnit Test Patterns: Refactoring Test Code](https://amzn.to/30fANr0) by Gerard Meszaros
+        assertEquals("http", url.getProtocol());
+    } catch (MalformedURLException e) {
+        fail(e.getMessage());
+    }
+}
+```
 
-:book: [Growing Object-Oriented Software, Guided by Tests](https://amzn.to/2O0hHTm) by Steve Freeman, Nat Pryce
-{{% /callout %}}
+In this case we know for sure that our URL is not malformed. Even if the code would make it possible to have a malformed URL, it would still be better to let the test method throw an exception. 
+
+```java
+@Test
+void noNeedToCatch() throws MalformedURLException {
+    URL url = new URL("http://localhost");
+
+    assertEquals("http", url.getProtocol());
+}
+```
+
+We were able to remove a lot of noise from the test. Now the test tells us exactly what is expected to happen and nothing else.
 
 ## Summary
 
@@ -327,3 +344,15 @@ Test readability is the sum of various activities:
 - Using patterns like the Test Data Builder to provide just enough information
 
 You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/write-better-tests/tree/main/test-readability).
+
+{{% callout note %}}
+**Additional reading:**
+
+:pencil2: [DRY and DAMP in Tests](/dry-damp-test/)
+
+:pencil2: [How to Create a Test Data Builder](/test-data-builders/)
+
+:book: [xUnit Test Patterns: Refactoring Test Code](https://amzn.to/30fANr0) by Gerard Meszaros
+
+:book: [Growing Object-Oriented Software, Guided by Tests](https://amzn.to/2O0hHTm) by Steve Freeman, Nat Pryce
+{{% /callout %}}
