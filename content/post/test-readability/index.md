@@ -11,6 +11,8 @@ tags:
 
 In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on test readability and expressiveness.
 
+{{% toc %}}
+
 ## :walking: Test Names Should Describe Behaviour
 
 Naming is one of the most difficult things in programming. In tests, the name of the test should describe what is being tested and what kind of behaviour is expected.
@@ -117,7 +119,7 @@ void purchaseSucceedsWhenEnoughInventory() {
 
 The change is not big, but the result is immediately much more readable. It is quite clear what part is doing the setup, what is triggering the behaviour, and what is verifying the expectations.
 
-### When Common Sense Outweigh Rules
+### :thinking: When Common Sense Outweigh Rules
 
 Both _Arrange, Act, Assert_ and _Given, When, Then_ are great for setting the stage. However, sometimes it can be hard to justify the presence of such ceremony.
 
@@ -157,7 +159,7 @@ One cause for too much information is that we just put all the details inline in
 
 On the other hand, too little information makes the test obscure because we **cannot see the cause and effect relationship**. Having too little information is usually the result of attempting to remove duplication in the code.
 
-### Verify Only What You Need
+### :heavy_check_mark: Verify Only What You Need
 
 Sometimes we see people adding a lot of test conditions into a single test case. This can happen in an attempt to reduce setup overhead, or adding "just one more little thing" in the test. 
 
@@ -220,7 +222,7 @@ void inventoryIsNotRemovedOnFailedPurchase() {
 
 One condition per test will make the test **more readable**. It will also help with defect localization, as it's now easier to **pinpoint the cause of the error**.
 
-### Hide Irrelevant Data
+### :see_no_evil: Hide Irrelevant Data
 
 Sometimes to be able to test a behaviour we have to construct objects that require certain data to be present. However, this data may be irrelevant for testing the behaviour. This is called the Irrelevant Data test smell.
 
@@ -243,7 +245,7 @@ void newPersonIsUnverified() {
 
 Now the essential setup is hidden in the factory method. The only relevant information to the test is that a new person has been created.
 
-### Don't Hide Cause From Effect
+### :eyes: Don't Hide Cause From Effect
 
 So what happens if we have more tests with a similar setup? In the following example only part of the data is relevant to the test.
 
@@ -281,7 +283,7 @@ void returnFullNameOfUser() {
 
 However, now the setup won't have all the relevant information. It is unclear why the person is underage, or why the person has the name mentioned in the test. This is called the Mystery Guest test smell.
 
-### Provide Essential But Only Show Relevant Data
+### :compass: Provide Essential But Only Show Relevant Data
 
 Luckily, it is possible to both provide the essential information and keep the information relevant to the test. We can do that if we create a test data builder.
 
@@ -304,7 +306,7 @@ Neither of the tests now have any irrelevant information. The essential informat
 
 Using this pattern helps with both removing duplication and keeping the data relevant to the tested behaviour.
 
-### Don't Catch Exceptions Unnecessarily
+### :no_entry_sign: Don't Catch Exceptions Unnecessarily
 
 We should not catch any exceptions in the test unless that is what we want to test. Sometimes you see the following kind of code.
 
@@ -334,7 +336,7 @@ void noNeedToCatch() throws MalformedURLException {
 
 We were able to remove a lot of noise from the test. Now the test tells us exactly what is expected to happen and nothing else.
 
-## Summary
+## :white_check_mark: Summary
 
 Test readability is the sum of various activities:
 
