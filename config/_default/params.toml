@@ -215,7 +215,7 @@ plugins_js  = []
   provider = "disqus"
 
   # Which page types are commentable?
-  commentable = {page = true, post = true, docs = true, project = true, publication = true, talk = true}
+  commentable = {page = true, post = true, book = true, project = true, publication = true, talk = true}
 
   # Configuration of Disqus.
   [comments.disqus]
