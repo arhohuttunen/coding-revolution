@@ -14,18 +14,18 @@ featured: true
 image:
   focal_point: center
   preview_only: true
-weight: 50
+weight: 60
 ---
 
 {{< youtube 0xSCbTYAiF0 >}}
 <br/>
 
-This tutorial teaches you how to write JUnit 5 parameterized tests. It is structured so that it also answers most asked questions about parameterized tests.
+In this tutorial we will learn how to write JUnit 5 parameterized tests. The tutorial is structured so that it also answers most asked questions about parameterized tests.
 
 ## Overview
 
 Parameterized tests make it possible to run the same test multiple times with different arguments.
-This way, you can quickly verify various conditions without writing a test for each case.
+This way, we can quickly verify various conditions without writing a test for each case.
 
 We can write JUnit 5 parameterized tests just like regular JUnit 5 tests but have to use the `@ParameterizedTest` annotation instead.
 We will also have to declare an argument source for the test.
@@ -34,7 +34,7 @@ We declare these argument sources with different argument source annotations.
 ## Do you only need one argument?
 
 The simplest argument source is the `@ValueSource` argument source.
-It lets you specify an array of literals of primitive types (either `short`, `byte`, `int`, `long`, `float`, `double`, `char`, `boolean`, `String`, or `Class`).
+It lets us specify an array of literals of primitive types (either `short`, `byte`, `int`, `long`, `float`, `double`, `char`, `boolean`, `String`, or `Class`).
 
 Here is an example of using different strings as the test argument.
 
@@ -114,7 +114,7 @@ It is also possible to use `@NullAndEmptySource` which combines the two.
 The `@ValueSource` and `@EnumSource` annotations only work when our test method takes one argument.
 However, we often need more than that.
 
-`@MethodSource` allows you to refer to a factory method that returns the arguments.
+`@MethodSource` allows us to refer to a factory method that returns the arguments.
 Such methods must return a `Stream`, `Iterable`, `Iterator`, or an array of arguments.
 
 Let's assume that we have a `DateUtils` class that gets the name of the month for a number.
@@ -206,7 +206,7 @@ void externalPalindromeMethodSource(String string) {
 
 ## Do you have a lot of data?
 
-The `@CsvSource` annotation allows you to use a list of comma-separated string values.
+The `@CsvSource` annotation allows us to use a list of comma-separated string values.
 Using the annotation makes it possible to provide multiple parameters to the test method in quite a compact way.
 
 ```java
@@ -484,13 +484,13 @@ Now when we run the test we get output similar to this:
 
 ## Summary
 
-JUnit 5 parameterized tests allow you to remove duplication from test code.
+JUnit 5 parameterized tests allow us to remove duplication from test code.
 They make it possible to execute the same test several times using different inputs.
 
-- Using `@ValueSource` is enough in most cases when you have just one argument, but you can also use `@EnumSource`, `@NullSource` and `@EmptySource`
-- If there are multiple arguments `@MethodSource` is the right choice in most cases, and you can reuse providers with `@ArgumentsSource` 
-- For data-driven tests you can use `@CsvFileSource`
-- You can write your custom argument conversions with `ArgumentConverter`
-- To customize arguments aggregation you can use `ArgumentsAggregator`
+- Using `@ValueSource` is enough in most cases when we have just one argument, but we can also use `@EnumSource`, `@NullSource` and `@EmptySource`
+- If there are multiple arguments `@MethodSource` is the right choice in most cases, and we can reuse providers with `@ArgumentsSource` 
+- For data-driven tests we can use `@CsvFileSource`
+- You can write our custom argument conversions with `ArgumentConverter`
+- To customize arguments aggregation we can use `ArgumentsAggregator`
   
 The example code for this guide can be found in [GitHub](https://github.com/arhohuttunen/junit5-examples/tree/main/junit5-parameterized-tests).
