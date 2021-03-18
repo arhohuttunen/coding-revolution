@@ -228,6 +228,12 @@ class NestedTest {
 
 Now JUnit 5 will discover the inner nested test classes and their tests.
 
+{{% callout note %}}
+**Additional reading:**
+
+:pencil2: [JUnit 5 Nested Tests](/junit-5-nested-tests/)
+{{% /callout %}}
+
 ## Static methods and fields
 
 We already briefly touched on static methods and Kotlin. To make a Kotlin method visible as a Java static method, we have to create a companion object and annotate the method with `@JvmStatic`.

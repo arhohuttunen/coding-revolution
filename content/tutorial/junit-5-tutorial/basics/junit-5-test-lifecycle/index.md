@@ -263,6 +263,13 @@ Before each happy path
 After each happy path
 ```
 
+{{% callout note %}}
+**Additional reading:**
+
+:pencil2: [JUnit 5 Nested Tests](/junit-5-nested-tests/)
+{{% /callout %}}
+
+
 ## Extension Lifecycle
 
 When using extensions, JUnit calls extension lifecycle callbacks in addition to the lifecycle methods of the test class.
