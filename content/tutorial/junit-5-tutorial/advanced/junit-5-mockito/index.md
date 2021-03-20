@@ -1,7 +1,6 @@
 ---
 title: Using Mockito with JUnit 5
 type: book
-linktitle: Mockito
 url: /junit-5-mockito
 date: 2020-11-28
 author: Arho Huttunen
