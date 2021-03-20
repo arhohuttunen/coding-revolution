@@ -1,5 +1,5 @@
 ---
-title: Using Mockito with JUnit 5
+title: Using Mockito With JUnit 5
 type: book
 url: /junit-5-mockito
 date: 2020-11-28

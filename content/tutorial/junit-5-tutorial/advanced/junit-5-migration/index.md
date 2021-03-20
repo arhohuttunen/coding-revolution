@@ -1,7 +1,7 @@
 ---
-title: "Migrating from JUnit 4 to JUnit 5: A Definitive Guide"
+title: "Migrating From JUnit 4 to JUnit 5: A Definitive Guide"
 type: book
-linktitle: Migrating from JUnit 4
+linktitle: Migrating From JUnit 4
 url: /junit-5-migration
 date: 2017-11-20
 author: Arho Huttunen

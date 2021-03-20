@@ -1,8 +1,8 @@
 ---
-title: JUnit 5 with Kotlin for Java Developers
+title: JUnit 5 With Kotlin for Java Developers
 subtitle: Crash course for converting your JUnit 5 Java Tests into Kotlin
 type: book
-linktitle: JUnit 5 with Kotlin
+linktitle: JUnit 5 With Kotlin
 url: /junit-5-kotlin
 date: 2019-04-14
 author: Arho Huttunen
