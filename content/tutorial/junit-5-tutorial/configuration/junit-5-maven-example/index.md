@@ -1,7 +1,7 @@
 ---
 title: "JUnit 5 Maven Example: Running Tests with Surefire"
 type: book
-linktitle: Running With Maven
+linktitle: Maven Configuration
 url: /junit-5-maven-example
 date: 2018-01-03
 author: Arho Huttunen

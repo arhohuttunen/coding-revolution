@@ -2,7 +2,7 @@
 title: JUnit 5 Gradle Example
 subtitle: Running Tests with Gradle
 type: book
-linktitle: Running With Gradle
+linktitle: Gradle Configuration
 url: /junit-5-gradle-example
 date: 2018-01-01
 author: Arho Huttunen
