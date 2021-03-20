@@ -586,8 +586,6 @@ Instead of using the Lombok-generated factory method, we can use the factory met
 
 Since we cannot pass around builders as arguments, the code is still a little **noisier than our custom builder**. Another drawback is that our builder **will now always unnecessarily construct defaults for objects whose value we override** in our tests.
 
-Overall, if we have a lot of things to construct, the benefit might outweigh the drawback.
-
 ## :white_check_mark: Summary
 
 Test data builders help to **hide syntax noise related to creating objects** and make the code easier to read. Test data builders also **make the code more descriptive and the tests less brittle**.
