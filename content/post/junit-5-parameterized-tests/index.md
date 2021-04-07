@@ -1,8 +1,5 @@
 ---
 title: "A More Practical Guide to JUnit 5 Parameterized Tests"
-type: book
-linktitle: Parameterized Tests
-url: /junit-5-parameterized-tests
 date: 2019-05-25
 author: Arho Huttunen
 summary: Learn how to write JUnit 5 parameterized tests. Learn answers to some of the most asked questions about parameterized tests.
@@ -14,13 +11,16 @@ featured: true
 image:
   focal_point: center
   preview_only: true
-weight: 60
 ---
 
 {{< youtube 0xSCbTYAiF0 >}}
 <br/>
 
 In this tutorial we will learn how to write JUnit 5 parameterized tests. The tutorial is structured so that it also answers most asked questions about parameterized tests.
+
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
+
+{{% toc %}}
 
 ## Overview
 
