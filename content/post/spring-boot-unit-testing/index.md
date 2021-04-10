@@ -2,13 +2,15 @@
 title: Spring Boot Unit Testing
 date: 2021-04-05
 author: Arho Huttunen
-summary: Learn how to write unite tests for Spring Boot applications. Learn the technical details necessary to write good unit tests.
+summary: Learn how to write unit tests for Spring Boot applications. Learn the technical details necessary to write good unit tests.
 categories:
   - Testing
 tags:
   - Clean code
   - JUnit 5
   - Spring
+image:
+  focal_point: center
 ---
 
 In this article, we will learn how to write unit tests for our Spring Boot applications. Most importantly, we will look at the technical details necessary to write good unit tests.
@@ -18,7 +20,7 @@ This article is the first one of the Spring Boot Testing mini-series. In this ar
 ## The Spring Boot Testing Mini-Series
 
 1. Spring Boot Unit Testing
-2. Testing the Web Layer With Spring Boot `@WebMvcTest`
+2. [Testing the Web Layer With Spring Boot `@WebMvcTest`](/spring-boot-webmvctest/)
 3. Testing the Persistence Layer With Spring Boot `@DataJpaTest`
 4. Testing Serialization With Spring Boot `@JsonTest` 
 5. Testing REST Calls With `WebTestClient` And `MockWebServer`
@@ -111,7 +113,7 @@ It takes about 5 seconds to run this locally. Five seconds might not sound much,
 
 Ok, so if we cannot use `@SpringBootTest`, what should we do then? Let's take a look.
 
-## Making the Service Unit-Testable
+## Make the Service Unit-Testable
 
 Here is another quote from Spring framework documentation about unit testing:
 
