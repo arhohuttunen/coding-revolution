@@ -20,11 +20,11 @@ This article is the first one of the Spring Boot Testing mini-series. In this ar
 ## The Spring Boot Testing Mini-Series
 
 1. Spring Boot Unit Testing
-2. [Testing the Web Layer With Spring Boot `@WebMvcTest`](/spring-boot-webmvctest/)
-3. Testing the Persistence Layer With Spring Boot `@DataJpaTest`
-4. Testing Serialization With Spring Boot `@JsonTest` 
-5. Testing REST Calls With `WebTestClient` And `MockWebServer`
-6. Spring Boot Integration Testing with `@SpringBootTest` 
+2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
+3. Testing the Persistence Layer With Spring Boot @DataJpaTest
+4. Testing Serialization With Spring Boot @JsonTest 
+5. Testing REST Calls With WebTestClient And MockWebServer
+6. Spring Boot Integration Testing with @SpringBootTest 
 
 ## What Is a Unit Test?
 
@@ -65,15 +65,15 @@ public class OrderService {
     @Autowired
     private PaymentRepository paymentRepository;
 
-    public void pay(Long orderId, String creditCardNumber) {
-        Order order = orderRepository.findById(orderId).orElseThrow(PaymentException::new);
+    public Payment pay(Long orderId, String creditCardNumber) {
+        Order order = orderRepository.findById(orderId).orElseThrow(EntityNotFoundException::new);
 
         if (order.isPaid()) {
             throw new PaymentException();
         }
 
         orderRepository.save(order.markPaid());
-        paymentRepository.save(new Payment(order.getId(), creditCardNumber));
+        return paymentRepository.save(new Payment(order, creditCardNumber));
     }
 }
 ```
@@ -93,10 +93,10 @@ class OrderServiceTests {
         Order order = new Order(1L, false);
         orderRepository.save(order);
 
-        orderService.pay(1L, "4532 7562 7962 4064");
+        Payment payment = orderService.pay(1L, "4532756279624064");
 
-        Order savedOrder = orderRepository.findById(1L).get();
-        assertThat(savedOrder.getPaid()).isTrue();
+        assertThat(payment.getOrder().isPaid()).isTrue();
+        assertThat(payment.getCreditCardNumber()).isEqualTo("4532756279624064");
     }
 }
 ```
@@ -176,10 +176,12 @@ class OrderServiceTests {
     void payOrder() {
         Order order = new Order(1L, false);
         when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
+        when(paymentRepository.save(any())).then(returnsFirstArg());
 
-        orderService.pay(1L, "4532 7562 7962 4064");
+        Payment payment = orderService.pay(1L, "4532756279624064");
 
-        assertThat(order.getPaid()).isTrue();
+        assertThat(payment.getOrder().isPaid()).isTrue();
+        assertThat(payment.getCreditCardNumber()).isEqualTo("4532756279624064");
     }
 }
 ```
