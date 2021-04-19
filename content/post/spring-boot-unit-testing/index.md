@@ -105,6 +105,34 @@ So, what's wrong with a test like this? Well, this is not a unit test. When we u
 
 Another problem is that we have to write orders to and read them from the database. While this could be something that we want to do in the integration tests, it's not desirable in unit tests. Remember that we want to **test the unit in isolation**.
 
+If we want to isolate the test from the database and we are already familiar with Spring Boot and Mockito, we might ask: why not just annotate the repositories with `@MockBean` then?
+
+```java
+@SpringBootTest
+class OrderServiceTests {
+    @MockBean
+    private OrderRepository orderRepository;
+    @MockBean
+    private PaymentRepository paymentRepository;
+    @Autowired
+    private OrderService orderService;
+
+    @Test
+    void payOrder() {
+        Order order = new Order(1L, false);
+        when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
+        when(paymentRepository.save(any())).then(returnsFirstArg());
+
+        Payment payment = orderService.pay(1L, "4532756279624064");
+
+        assertThat(payment.getOrder().isPaid()).isTrue();
+        assertThat(payment.getCreditCardNumber()).isEqualTo("4532756279624064");
+    }
+}
+```
+
+We could use mocks here, and it's something we can use in our integration tests. However, it's still going to be much slower than writing a plain unit test.
+
 Here is a quote from Spring framework documentation about unit testing:
 
 > True unit tests typically run extremely quickly, as there is no runtime infrastructure to set up. Emphasizing true unit tests as part of your development methodology can boost your productivity.
