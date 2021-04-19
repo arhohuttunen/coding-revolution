@@ -11,7 +11,11 @@ tags:
   - Spring
 image:
   focal_point: center
+  preview_only: true
 ---
+
+{{< youtube Ae5ukd136pc >}}
+<br/>
 
 In this article, we will learn how to write unit tests for our Spring Boot applications. Most importantly, we will look at the technical details necessary to write good unit tests.
 
