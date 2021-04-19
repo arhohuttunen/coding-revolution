@@ -131,7 +131,9 @@ class OrderServiceTests {
 }
 ```
 
-We could use mocks here, and it's something we can use in our integration tests. However, it's still going to be much slower than writing a plain unit test.
+We could use mocks here, and it's something we can use in our integration tests. However, it's still going to be much slower than writing a plain unit test. 
+
+Furthermore, every time we use `@MockBean` in our tests, Spring will create a new application context in the tests, **unable to use a cached version of the context**. Having to create new context adds to the overall execution time of the tests.
 
 Here is a quote from Spring framework documentation about unit testing:
 
