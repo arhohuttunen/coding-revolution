@@ -62,7 +62,9 @@ user_groups:
 ---
 
 Hi! My name is Arho Huttunen, and I live in Finland. I am a software engineer with over 20 years of experience.
-During my career I have trained and mentored a lot of people, and I feel really passionate about it.
+During my career, I have trained and mentored many people, and I feel really passionate about it.
 
-I believe that becoming a better software engineer is a life long journey. I want to keep doing what I enjoy and
+I believe that becoming a better software engineer is a life-long journey. I want to keep doing what I enjoy and
 teach people how to succeed in that journey.
+
+I am really excited about writing tests and test automation. I am also very interested in software architectures that adapt to change and make your code maintainable.
