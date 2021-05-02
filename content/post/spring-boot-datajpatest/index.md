@@ -37,7 +37,7 @@ Let's consider what is needed when we add a database connection to our applicati
 
 Next, let's remind ourselves about one of the characteristics of unit tests: _A test is not a unit test if it talks to the database_. So it is pretty clear that involving the database in a test makes it an integration test.
 
-However, the only way to make sure that, for example, queries work is to execute them against a running database. Unit testing the persistence layer doesn't make sense.
+However, the only way to make sure that, for example queries work is to execute them against a running database. Unit testing the persistence layer doesn't make sense.
 
 Let's look at how we can deal with the above matters.
 
@@ -95,13 +95,11 @@ However, there is a drawback when using an in-memory database for our tests; the
 
 There are three ways to fix this. The first option is to disable Flyway in tests and let Hibernate generate the schema:
 
-```yaml
-spring:
-  flyway:
-    enabled: false
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+```java
+@TestPropertySource(properties = {
+        "spring.flyway.enabled=false",
+        "spring.jpa.hibernate.ddl-auto=create-drop"
+})
 ```
 
 The problem with this approach is that we no longer know at the test time that Flyway scripts work as expected.
