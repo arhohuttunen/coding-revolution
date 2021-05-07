@@ -216,7 +216,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
 We inherit default methods like `save()`, `findById()`, or `findAll()` from `JpaRepository`. Testing any of these methods would be a waste because we would be testing the framework.
 
-Some argue that we should not test these because the queries are auto-generated and Spring Data validates the queries at start-up.
+Some argue that we should not test the inferred queries either because the queries are auto-generated and Spring Data validates the queries at start-up.
 
 So, for example, if we had a typo in the above method name, the application would fail to start:
 
@@ -266,7 +266,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 }
 ```
 
-Spring Data will verify the named parameters, but since it's a native query that can contain database-specific SQL, no one will validate the syntax.
+Spring Data will verify the named parameters, but since it's a native query that can contain database-specific SQL, no one will validate the syntax. The lack of validation makes native queries a good target for testing.
 
 ## Manage Test Data
 
