@@ -19,6 +19,11 @@
   url = "/junit-5-tutorial/"
 
 [[main]]
+  name = "Spring Boot Testing"
+  parent = "tutorials"
+  url = "/spring-boot-unit-testing/"
+
+[[main]]
   name = "Refactoring"
   url = "/refactoring/"
   weight = 40
