@@ -11,8 +11,12 @@ tags:
   - Spring
 image:
   focal_point: center
+  preview_only: true
 
 ---
+
+{{< youtube NQHQ3YVMWaM >}}
+<br/>
 
 This article is the fourth part of the Spring Boot Testing mini-series. In this article, we look at how to write tests for JSON serialization and deserialization.
 
