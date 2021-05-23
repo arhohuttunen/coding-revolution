@@ -9,7 +9,6 @@ categories:
 tags:
   - JUnit 5
   - Kotlin
-featured: true
 image:
   focal_point: center
   preview_only: true
@@ -259,7 +258,7 @@ class RegisterStaticExtensionTest {
         val jettyExtension: JettyExtension = JettyExtension()
     }
 }
-``` 
+```
 
 However, if we write code like this, we will see an error about the field being private:
 
@@ -311,7 +310,7 @@ class LifecycleTest {
         println("Second test")
     }
 }
-``` 
+```
 
 Since this now shares instance state between tests, you might need to reset state in `@BeforeEach` or `@AfterEach`, if your test methods rely on state stored in instance variables. In general, try to avoid writing tests that depend on such state. 
 
