@@ -27,7 +27,7 @@ This article is the first one of the Spring Boot Testing mini-series. In this ar
 2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
 3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
 4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
-5. Testing REST Calls With WebTestClient And MockWebServer
+5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
 6. Spring Boot Integration Testing with @SpringBootTest 
 
 ## What Is a Unit Test?
