@@ -2,7 +2,7 @@
 title: Testing Serialization With Spring Boot @JsonTest
 date: 2021-05-07
 author: Arho Huttunen
-summary: Learn how to test Spring Boot repositories using @DataJpaTest. Learn what should be tested on the persistence layer and how.
+summary: Learn how to test JSON serialization in Spring Boot using @JsonTest. Learn why to test serialization separately and how.
 categories:
   - Testing
 tags:
