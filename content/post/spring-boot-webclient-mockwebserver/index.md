@@ -344,4 +344,4 @@ To mock the `WebClient` in other tests, we can first write a wrapper class for i
 
 In the following article of this mini-series, we will discuss how to write integration tests with `@SpringBootTest`.
 
-You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-webclient-test).
+You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-webclient-mockwebserver).
