@@ -31,7 +31,7 @@ To write JUnit 5 tests in Kotlin, we first need the `junit-jupiter` artifact as 
 
 ```gradle
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.0")
 }
 
 tasks.withType<Test> {

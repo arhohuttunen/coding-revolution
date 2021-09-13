@@ -27,7 +27,7 @@ Before doing anything else, we have to add the Mockito dependency.
 
 ```gradle
 dependencies {
-    testImplementation('org.mockito:mockito-core:3.7.7')
+    testImplementation('org.mockito:mockito-core:3.12.4')
 }
 ```
 
@@ -179,7 +179,7 @@ To be able to use the extension we have to first add the dependency to it.
 
 ```gradle
 dependencies {
-    testImplementation('org.mockito:mockito-junit-jupiter:3.7.7')
+    testImplementation('org.mockito:mockito-junit-jupiter:3.12.4')
 }
 ```
 

@@ -21,7 +21,7 @@ First, to be able to write JUnit 5 tests we need the `junit-jupiter` artifact as
 
 ```gradle
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.0")
 }
 ```
 

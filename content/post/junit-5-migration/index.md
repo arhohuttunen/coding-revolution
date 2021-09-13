@@ -79,13 +79,13 @@ In addition to this, to run the tests with Maven we also need the Surefire plugi
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>5.7.0</version>
+        <version>5.8.0</version>
         <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.junit.vintage</groupId>
         <artifactId>junit-vintage-engine</artifactId>
-        <version>5.7.0</version>
+        <version>5.8.0</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
@@ -99,8 +99,8 @@ test {
 }
 
 dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter:5.7.0')
-    testRuntime('org.junit.vintage:junit-vintage-engine:5.7.0')
+    testImplementation('org.junit.jupiter:junit-jupiter:5.8.0')
+    testRuntime('org.junit.vintage:junit-vintage-engine:5.8.0')
 }
 ```
 
@@ -426,7 +426,7 @@ Respectively, when using Gradle we have to add the dependency in `build.gradle`:
 
 ```gradle
 dependencies {
-    testImplementation('org.mockito:mockito-junit-jupiter:3.6.28')
+    testImplementation('org.mockito:mockito-junit-jupiter:3.12.4')
 }
 ```
 
@@ -487,7 +487,7 @@ To enable the support in Maven we have to add the dependency in `pom.xml`:
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-migrationsupport</artifactId>
-        <version>5.7.0</version>
+        <version>5.8.0</version>
     </dependency>
 </dependencies>
 ```
@@ -496,7 +496,7 @@ To enable the support in Gradle we have to add the dependency in `build.gradle`:
 
 ```gradle
 dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter-migrationsupport:5.7.0')
+    testImplementation('org.junit.jupiter:junit-jupiter-migrationsupport:5.8.0')
 }
 ```
 
