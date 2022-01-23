@@ -14,7 +14,7 @@ image:
 
 This article is the sixth part of the Spring Boot Testing mini-series. In this article, we look at how to write integration tests with `@SpringBootTest`.
 
-First, we will discuss different types of integration tests. Then, we will discover customization options for `@SpringBooTest` and how to write system tests with an embedded web server running.
+First, we will discuss different types of integration tests. Then, we will discover customization options for `@SpringBootTest` and how to write system tests with an embedded web server running.
 
 ## The Spring Boot Testing Mini-Series
 
