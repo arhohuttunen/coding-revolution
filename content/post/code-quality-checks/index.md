@@ -29,7 +29,7 @@ Manual code reviews should focus on the things that automation is not that good 
 
 You can make **peer reviews** by asking someone to look at your code. If the version control tools permit you can also make a **pull request**. You need to keep the granularity of peer reviews small enough. Otherwise the reviewer will feel overwhelmed and ignore most of the content.
 
-{{< tweet 397664295875805184 >}}
+{{< tweet user="iamdevloper" id="397664295875805184" >}}
 
 Formal code inspections are a breeze from the past and I do no recommend them. The scope of the review is usually too large and the time of the review is usually too late.
 

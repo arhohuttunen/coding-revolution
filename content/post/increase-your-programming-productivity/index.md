@@ -59,7 +59,7 @@ Working with other people, you might be doing code reviews. You make a pull requ
 
 I call this pull request ping pong, and it can be a colossal waste of time. You might want to **try pair-programming**. And by trying, I mean don't just try it once and say you didn't like it. Experiment with it for a month and see if it helps.
 
-{{< tweet 397664295875805184 >}}
+{{< tweet user="iamdevloper" id="397664295875805184" >}}
 
 The small tasks that you do tens or hundreds of times a day are called micro-feedback loops. You can **save a ton of time optimizing your micro-feedback loops**. Making a build and tests take 30 seconds instead of 2 minutes doesn't sound much, but it adds up. That could be easily tens of minutes a day or hundreds of minutes a week. 
 
