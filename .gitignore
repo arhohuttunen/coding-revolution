@@ -7,3 +7,5 @@ public/
 
 # Local configuration
 assets/jsconfig.json
+
+.DS_Store
