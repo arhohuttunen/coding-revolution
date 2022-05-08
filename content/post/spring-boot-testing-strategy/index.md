@@ -24,7 +24,7 @@ First, we discuss ambiguous testing terminology and why to avoid debating what t
 4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
 5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
 6. [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
-7. Spring Boot Testing Best Practices
+7. Spring Boot Testing Strategy
 
 ## The Practical Test Pyramid
 
@@ -84,7 +84,9 @@ class OrderServiceTests {
 
 Such tests are simpler to set up, run faster, and more reliably. Also, failure scenarios are easier to simulate through mocks.
 
-The conclusion here is that we should prefer **sociable tests that are allowed to talk to collaborators within the architectural boundaries**. If we extract some code inside our service code into another service, it doesn't mean that we then have to mock that other service.
+{{< figure src="sociable-solitary.svg" caption="Sociable versus solitary tests" theme="light" >}}
+
+The conclusion here is that we should write both solitary and sociable tests. However, to avoid coupling within the architectural boundaries, we should prefer **sociable tests that are allowed to talk to collaborators**. If we extract some code inside our service code into another service, it doesn't mean that we then have to mock that other service.
 
 {{% callout note %}}
 
@@ -171,7 +173,7 @@ Examples of separating logic from infrastructure in a Spring Boot application:
 
 Remember the previous `ExchangeRateClient` example? That is separating logic from infrastructure in action. We establish a boundary between the service and the code that needs to call `WebClient`.
 
-{{< figure src="logic-infrastructure.png" caption="Separating logic from the infrastructure" theme="light" >}}
+{{< figure src="separate-logic-infrastructure.svg" caption="Separating logic from the infrastructure" theme="light" >}}
 
 The service does not need to know how to make an HTTP request. If it does, we have to fall back to broader tests for the service.
 
