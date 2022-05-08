@@ -162,7 +162,9 @@ The easiest code to test is code that has no dependencies on the outside world. 
 
 We want to keep our logic layer pure in such a way that it doesn't depend on any infrastructure code. There are a lot of ways to achieve this.
 
-One way is to use a **layered architecture**. In a traditional Spring Boot application that would look like arranging the code into controllers, services and repositories. Another popular way is the **Hexagonal Architecture**, which makes the external and internal concerns more explicit.
+One way is to use a **layered architecture**. In a traditional Spring Boot application that would look like arranging the code into controllers, services, domain model and repositories. Unfortunately sometimes people end up capturing all the logic within service classes. The domain model becomes **anaemic** meaning that it contains only data and not behavior.
+
+Another popular way is to use **Hexagonal Architecture**, which makes the external and internal concerns more explicit.
 
 Examples of separating logic from infrastructure in a Spring Boot application:
 
