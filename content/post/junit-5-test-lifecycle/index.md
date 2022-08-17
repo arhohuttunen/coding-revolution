@@ -11,7 +11,7 @@ tags:
 
 In this tutorial, we will learn how to run code before and after each test or all tests in the test class. We will also see what is the execution order when using nested tests or extensions.
 
-This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
 ## Lifecycle Methods
 
@@ -267,7 +267,6 @@ After each happy path
 :pencil2: [JUnit 5 Nested Tests](/junit-5-nested-tests/)
 {{% /callout %}}
 
-
 ## Extension Lifecycle
 
 When using extensions, JUnit calls extension lifecycle callbacks in addition to the lifecycle methods of the test class.
@@ -334,9 +333,8 @@ After each from ExtensionOne
 ````
 
 {{% callout note %}}
-JUnit 5 documentation has more in-depth details about the relative execution order of user code and extensions.
-
 **Additional reading:**
+JUnit 5 documentation has more in-depth details about the relative execution order of user code and extensions.
 
 :bookmark: [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/#extensions-execution-order)
 {{% /callout %}}

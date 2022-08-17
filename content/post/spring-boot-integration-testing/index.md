@@ -54,7 +54,6 @@ What does matter is that we don't focus only on the broad integration tests. Usi
 We should use broader tests to give us confidence that our application works correctly. However, we shouldn't test conditional logic or edge cases in those tests. Make sure broader tests only cover what narrower tests couldn't cover.
 
 The above doesn't mean that we should only write unit tests that mock everything. We should use mocks sparingly and only mock things like the file system, database, or network connection.
-
 {{% /callout %}}
 
 ## Write an Integration Test With a Mock Environment
@@ -87,7 +86,6 @@ Spring Boot has several auto configurations that configure smaller parts of the 
 A typical mistake is to add assertions for things like the response contents in these broader tests. If we already have a `@MockMvcTest ` that tests the same thing, there is no need to do it here.
 
 Conversely, if a broader test detects an error and there's no narrower test failing, we should try to write a narrower test for it.
-
 {{% /callout %}}
 
 ### Use Custom Properties with @TestPropertySource

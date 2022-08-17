@@ -41,11 +41,9 @@ Debating whether you should write unit tests or integration tests distracts us f
 These attributes complement each other very well. If we leverage some patterns that improve one of these attributes, we end up improving other areas as well. Let's look at some ways to achieve these goals.
 
 {{% callout note %}}
-
 **Additional reading:**
 
 :bookmark: [On the Diverse And Fantastical Shapes of Testing](https://martinfowler.com/articles/2021-test-shapes.html) by Martin Fowler
-
 {{% /callout %}}
 
 ## Only Mock Across Architectural Boundaries
@@ -55,9 +53,7 @@ If we interpret unit testing as something where we only test classes in isolatio
 If we try to avoid the problems of too much mocking by only focusing on broader tests, we will face other problems. Broader tests are **much slower** than narrower tests and they are **more sensitive to faults in other parts of the system**.
 
 {{% callout warning %}}
-
 Too much mocks can be an actual issue. However, making a conclusion that we should focus most of our efforts on broader tests is incorrect. We should treat this input as an opportunity to improve the design. Some design improvements have the side-effect of reducing mocks.
-
 {{% /callout %}}
 
 Between these two extremes, there is a sweet spot. We **mock across architectural boundaries** but **don't mock inside those boundaries**. These boundaries include things like the database or external services.
@@ -89,11 +85,9 @@ Such tests are simpler to set up, run faster, and more reliably. Also, failure s
 The conclusion here is that we should write both solitary and sociable tests. However, to avoid coupling within the architectural boundaries, we should prefer **sociable tests that are allowed to talk to collaborators**. If we extract some code inside our service code into another service, it doesn't mean that we then have to mock that other service.
 
 {{% callout note %}}
-
 **Additional reading:**
 
 :bookmark: [When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html) by Uncle Bob
-
 {{% /callout %}}
 
 ## Write Narrow Integration Tests For Outside Interactions
@@ -217,13 +211,11 @@ So far, we have been talking about different levels of tests and how architectur
 Before, I've written extensively about making your tests more readable, so we are not going too deep into that here. Some patterns that help in this aspect are **custom assertions**, **test data builders** and **helper methods**.
 
 {{% callout note %}}
-
 **Additional reading:**
 
-:pencil2: [DRY and DAMP in Tests](/dry-damp-tests)
+:pencil2: [DRY and DAMP in Tests](/dry-damp-tests/)
 
-:pencil2: [How to Make Your Tests Readable](/test-readability)
-
+:pencil2: [How to Make Your Tests Readable](/test-readability/)
 {{% /callout %}}
 
 Let's take a quick look at an example.

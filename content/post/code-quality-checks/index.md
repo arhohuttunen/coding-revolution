@@ -74,7 +74,7 @@ You can achieve best results by adding all levels of code quality checks into yo
 {{% callout note %}}
 **Additional reading:**
 
-- [How to prevent legacy code from emerging](/prevent-legacy-code-from-emerging)
+- [How to prevent legacy code from emerging](/prevent-legacy-code-from-emerging/)
 - [Strict Control of Java Code Quality](https://www.yegor256.com/2014/08/13/strict-code-quality-control.html) by Yegor Bugayenko
 - [Developer Productivity Report 2013 – How Engineering Tools & Practices Impact Software Quality & Delivery](https://jrebel.com/rebellabs/developer-productivity-report-2013-how-engineering-tools-practices-impact-software-quality-delivery/) by RebelLabs
 {{% /callout %}}

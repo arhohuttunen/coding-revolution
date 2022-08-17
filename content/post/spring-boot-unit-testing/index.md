@@ -243,7 +243,7 @@ class OrderServiceTests {
 With quite a simple change, we managed to make the test independent of Spring. The test is now fast and isolated. 
 
 {{% callout note %}}
-Additional reading:
+**Additional reading:**
 
 :pencil2: [Using Mockito With JUnit 5](/junit-5-mockito/)
 {{% /callout %}}

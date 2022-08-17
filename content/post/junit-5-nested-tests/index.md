@@ -16,7 +16,7 @@ image:
 
 In this tutorial, we will learn how to write JUnit 5 nested tests. We will learn how to provide a hierarchical structure to the tests that describe relationships between the tests.
 
-This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
 ## Tests Without Nests
 
@@ -120,7 +120,7 @@ Compared to the non-nested example, there is a little better organization becaus
 
 Running from an IDE is where we start to see some additional benefits of adding a nested structure. Here we have the test results in IntelliJ IDEA.
 
-![Running a nested JUnit 5 test in IntelliJ IDEA](junit-5-nested-test-intellij-idea.png)
+{{< figure src="junit-5-nested-test-intellij-idea.png" caption="Running a nested JUnit 5 test in IntelliJ IDEA" theme="light" >}}
 
 The report already looks a bit better. Each of the nested classes can be expanded or collapsed, and we can focus on the results we want.
 
@@ -268,7 +268,7 @@ Modern IDEs also allow collapsing and expanding of complete blocks in the code, 
 
 Running the test from an IDE now shows how much more structure the test results have. Here is a test run from IntelliJ IDEA.
 
-![Running a nested JUnit 5 test in IntelliJ IDEA](junit-5-nested-test-intellij-idea-2.png)
+{{< figure src="junit-5-nested-test-intellij-idea-2.png" caption="Running a nested JUnit 5 test in IntelliJ IDEA" theme="light" >}}
 
 When we run the test from the command line, we can see that the output has more structure.
 
@@ -409,7 +409,6 @@ Readability and removing duplication is a broad subject, and we are not going to
 
 :pencil2: [How to Make Your Tests Readable](/test-readability/)
 {{% /callout %}}
-
 
 ## Summary
 

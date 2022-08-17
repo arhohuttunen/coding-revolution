@@ -12,7 +12,7 @@ tags:
 
 In this article, we will learn how to write test data builders that remove duplication in constructing objects and increase the expressiveness of the test code. We will also learn how to use Lombok to reduce boilerplate code around the builders.
 
-In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on the test data builder pattern.
+In a [previous article](/dry-damp-tests/), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on the test data builder pattern.
 
 {{% toc %}}
 

@@ -14,7 +14,7 @@ tags:
 In this article, we will learn how to verify test results using JUnit 5 assertions.
 We will learn the basic methods for assertions, how to customize our error messages, and how to run multiple assertions as a group.
 
-This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
 ## Assertions
 
@@ -439,9 +439,7 @@ org.opentest4j.MultipleFailuresError: person (2 failures)
 As we can see, it's reporting both the failures, making it easier to fix the error.
 
 {{% callout note %}}
-A test should have only one reason to fail.
-We should not try to reduce the number of tests by verifying several conditions in a single test.
-However, in some cases, we might want to have more than one assertion in a test when the assertions are closely and semantically related.
+A test should have only one reason to fail. We should not try to reduce the number of tests by verifying several conditions in a single test. However, in some cases, we might want to have more than one assertion in a test when the assertions are closely and semantically related.
 {{% /callout %}}
 
 ## Advanced Matching

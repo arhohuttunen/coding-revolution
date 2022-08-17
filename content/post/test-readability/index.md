@@ -16,7 +16,7 @@ In this article, we will learn different ways to improve test readability. Being
 
 Tests document how the system should behave. They also act as self-verifying executable specifications. Sometimes we see these two things contradictory because of the level of details needed for different purposes.
 
-In a [previous article](/dry-damp-tests), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on test readability and expressiveness.
+In a [previous article](/dry-damp-tests/), we talked about how to remove duplication while at the same time making the code more descriptive. This article is a more practical guide concentrating on test readability and expressiveness.
 
 {{% toc %}}
 
@@ -400,7 +400,7 @@ We have now replaced a few things with intent-revealing naming:
 
 The test looks better, but it's nothing spectacular yet.
 
-### :man_shrugging: Use Test Helper Methods
+### :man-shrugging: Use Test Helper Methods
 
 There is still a lot of details about how to perform the behavior in the test. If we are testing that when we request people with a verified status, do we care how we make the HTTP request?
 
@@ -512,7 +512,7 @@ You can find the example code for this article on [GitHub](https://github.com/ar
 {{% callout note %}}
 **Additional reading:**
 
-:pencil2: [DRY and DAMP in Tests](/dry-damp-test/)
+:pencil2: [DRY and DAMP in Tests](/dry-damp-tests/)
 
 :pencil2: [How to Create a Test Data Builder](/test-data-builders/)
 
@@ -520,3 +520,4 @@ You can find the example code for this article on [GitHub](https://github.com/ar
 
 :book: [Growing Object-Oriented Software, Guided by Tests](https://amzn.to/2O0hHTm) by Steve Freeman, Nat Pryce
 {{% /callout %}}
+

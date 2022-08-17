@@ -11,7 +11,7 @@ tags:
 
 In this article, we will learn how to write and run a simple JUnit 5 test. We will learn how to setup preconditions, interact with the object we want to test, and verify that it behaves like we expect.
 
-This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
 ## Setup
 
@@ -24,7 +24,6 @@ The accompanying source code example already has configurations for both Maven a
 
 :pencil2: [JUnit 5 Gradle Example](/junit-5-gradle-example/)
 {{% /callout %}}
-
 
 ## Writing Our First Test
 
@@ -89,7 +88,7 @@ When using an IDE like IntelliJ IDEA we can just right click the test class and 
 
 Here we can see the results of running a passing JUnit 5 test in IntelliJ IDEA:
 
-![Running a JUnit 5 test in IntelliJ IDEA](junit-5-running-test-intellij-idea.png)
+{{< figure src="junit-5-running-test-intellij-idea.png" caption="Running a JUnit 5 test in IntelliJ IDEA" theme="light" >}}
 
 ### Running with Maven
 

@@ -267,11 +267,10 @@ public class BetterExampleTest {
 You could say that this is much more descriptive than the original version. By moving the object construction knowledge into a builder class, we have achieved both DRY and DAMP.
 
 {{% callout note %}}
-Additional reading:
+**Additional reading:**
 
 :pencil2: [How to Create a Test Data Builder](/test-data-builders/)
 {{% /callout %}}
-
 
 ## :heavy_check_mark: Custom assertions
 

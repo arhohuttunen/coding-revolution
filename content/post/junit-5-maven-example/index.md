@@ -12,7 +12,7 @@ tags:
 
 In this JUnit 5 Maven example, we will learn how to get the required dependencies for writing JUnit 5 tests with Maven. Also, we will learn how to configure the Maven Surefire plugin to run the tests.
 
-This article is part of the [JUnit 5 Tutorial][1].
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
 ## Required Dependencies
 
@@ -159,7 +159,4 @@ There we go! Maven Surefire is now running our tests.
 
 In this JUnit 5 Maven example we have learned how to add the required dependency for writing JUnit 5 tests and how to configure Maven Surefire plugin to be able to run the tests.
 
-The example code for this guide can be found on [GitHub][2].
-
-[1]:	/junit-5-tutorial
-[2]:	https://github.com/arhohuttunen/junit5-examples/tree/main/junit5-maven
+The example code for this guide can be found on [GitHub](https://github.com/arhohuttunen/junit5-examples/tree/main/junit5-maven).

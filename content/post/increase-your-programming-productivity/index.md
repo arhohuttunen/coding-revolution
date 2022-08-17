@@ -51,7 +51,7 @@ And while you are on the command line, why not use something like Z Shell and [O
 
 The common thing with all feedback loops is that as the time waiting goes up, so does the cost to fix something. As the feedback gets slower, there is a higher chance you have introduced changes that are already in conflict.
 
-I have written about [better git commits](/make-better-git-commits) before. **Committing more often makes it easier to go back to a working state** when making mistakes. Committing more often also makes the commits more focused and separates logical changes. 
+I have written about [better git commits](/make-better-git-commits/). **Committing more often makes it easier to go back to a working state** when making mistakes. Committing more often also makes the commits more focused and separates logical changes. 
 
 **Pushing to a remote repository more often reduces the risk of merge conflicts**. It's not completely removing them but makes it less frequent and easier to deal with them. Another obvious benefit of pushing more often is that you will have a second copy of your work.
 
@@ -67,7 +67,7 @@ Also, **small pauses can be long enough to get you distracted**, decide to open 
 
 When the feedback loops are too long, you might run them less often and start batching things. Lower frequency, in turn, makes the feedback loop even longer.
 
-Incorporating a code formatter to be run on saving, adding a static analysis plugin to your IDE, or adding a git hook that runs the tests can be effective ways of **making sure your feedback loops are frequent**. I have also written before about [code quality checks](/code-quality-checks) and shortening the feedback loop.
+Incorporating a code formatter to be run on saving, adding a static analysis plugin to your IDE, or adding a git hook that runs the tests can be effective ways of **making sure your feedback loops are frequent**. I have also written before about [code quality checks](/code-quality-checks/) and shortening the feedback loop.
 
 ## :stop_sign: Write less code
 

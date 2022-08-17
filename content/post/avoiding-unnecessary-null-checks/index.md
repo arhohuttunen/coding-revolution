@@ -18,7 +18,7 @@ The problem is that you are not probably handling null in every single method ca
 Null pointer exceptions are bad. Would it not be better if you did not have to check for nulls at all?
 
 > I call it my <a href="https://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions">billion-dollar mistake</a>. It was the invention of the null reference in 1965. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
-<cite>Sir Tony Hoare, 2009</cite>
+> -- <cite>Sir Tony Hoare, 2009</cite>
 
 ## Try not to return null
 
@@ -143,11 +143,9 @@ public class Customer {
 Not only this removes the need for null checks but also breaks up the conditional logic into composition of objects.
 
 {{% callout note %}}
-
 **Additional reading:**
 
 - [Switch statements](/switch-statements/)
-
 {{% /callout %}}
 
 ## Never pass null
@@ -171,12 +169,10 @@ Sometimes null might be a valid functional result, e.g. if you are trying to fin
 You might still argue that you need to guard against developers passing in null. While it is partly true, it is better to focus your efforts in-house in never passing in null instead of null check. By doing so you not only reduce the number of lines of code written but also are forced to use better design practices.
 
 {{% callout note %}}
-
 **Additional reading:**
 
 - [Why NULL is Bad?](https://www.yegor256.com/2014/05/13/why-null-is-bad.html) by Yegor Bugayenko
 - [Say "No" to "Null"](https://elegantcode.com/2010/05/01/say-no-to-null/) by John Sonmez
 - [Avoiding Nulls with Polymorphic Dispatch](http://www.natpryce.com/articles/000778.html) by Nat Price
 - [Avoiding Nulls with "Tell, Don't Ask" Style](http://www.natpryce.com/articles/000777.html) by Nat Price
-
 {{% /callout %}}

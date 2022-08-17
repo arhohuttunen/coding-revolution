@@ -165,7 +165,7 @@ We now have to provide all the fields in the JSON file. If there's a lot of fiel
 
 Testing the serialization of certain types or formats makes sense because they differ from the default behavior. However, testing all the other types is unnecessary because we should be able to trust the framework.
 
-Also, it's good to remember moving test data into a separate file can [hide relevant information](/test-readability/#-provide-just-enough-information) making the test harder to understand. We have to evaluate if it would be better to keep the data visible in the test.
+Also, it's good to remember moving test data into a separate file can [hide relevant information](/test-readability/) making the test harder to understand. We have to evaluate if it would be better to keep the data visible in the test.
 
 ## Test Deserialization
 

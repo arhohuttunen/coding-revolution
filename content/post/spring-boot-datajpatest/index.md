@@ -344,7 +344,7 @@ void findPaymentsByCreditCard() {
 The script-based approaches suffer from a couple of drawbacks:
 
 - Refactoring our database means that we have to refactor our test datasets.
-- Moving the data setup into a script can [hide relevant information](/test-readability/#-provide-just-enough-information) making the test harder to understand.
+- Moving the data setup into a script can [hide relevant information](/test-readability/) making the test harder to understand.
 
 There are other tools as well, like [Database Rider](https://github.com/database-rider/database-rider). This tool utilizes DBUnit, which uses datasets to put the database into a known state. Database Rider allows the datasets to be written in XML, JSON, or YAML.
 

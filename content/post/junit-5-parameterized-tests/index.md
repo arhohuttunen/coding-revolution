@@ -18,7 +18,7 @@ image:
 
 In this tutorial we will learn how to write JUnit 5 parameterized tests. The tutorial is structured so that it also answers most asked questions about parameterized tests.
 
-This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
+This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
 {{% toc %}}
 
