@@ -2,7 +2,7 @@
 title: Spring Boot Unit Testing
 date: 2021-04-05
 author: Arho Huttunen
-summary: Learn how to write unit tests for Spring Boot applications. Learn the technical details necessary to write good unit tests.
+summary: It takes time to learn how to write good unit tests. Learn how to write unit tests for Spring Boot applications.
 categories:
   - Testing
 tags:
