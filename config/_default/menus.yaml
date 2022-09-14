@@ -15,9 +15,9 @@ main:
     url: '/junit-5-tutorial'
   - name: Spring Boot Testing
     parent: tutorials
-    url: '/spring-boot-unit-testing'
+    url: '/spring-boot-testing-tutorial'
   - name: Book Reviews
-    url: '/category/book-review/'
+    url: '/category/book-review'
     weight: 30
   - name: About
     url: '/about'

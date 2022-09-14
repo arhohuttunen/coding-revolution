@@ -14,32 +14,22 @@ image:
   preview_only: true
 ---
 
+In this article, we look at how to test Spring Boot MVC controllers. First, we will discuss if unit testing controllers is enough. Then, we will discover what responsibilities the controllers are dealing with and how to test them.
+
+If you prefer learning from videos, make sure to check out the following video:
+
 {{< youtube NW8i2gna4qA >}}
 <br/>
 
-This article is the second part of the Spring Boot Testing mini-series. In this article, we look at how to test web controllers.
-
-First, we will discuss if unit testing controllers is enough. Then, we will discover what responsibilities the controllers are dealing with and how to test them.
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).
-
-## The Spring Boot Testing Mini-Series
-
-1. [Spring Boot Unit Testing](/spring-boot-unit-testing/)
-2. Testing Web Controllers With Spring Boot @WebMvcTest
-3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
-4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
-5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
-6. [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
-7. [Spring Boot Testing Strategy](/spring-boot-testing-strategy/)
+Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
 
 ## Is Unit Testing Enough?
 
-In the previous article of this mini-series, we discussed unit testing of Spring Boot applications. We saw how easy it is to write services in such a way that they are unit-testable.
+Unit testing is the foundation of a solid test strategy. Unit tests are fast and independent and provide fast and reliable feedback.
 
-If unit tests are fast and independent, should we also try to unit test our web and data access layers? In a typical Spring Boot application, we implement those layers as `@RestController` or `@Repository` components.
+If unit tests are fast and independent, should we also try to unit test our web layer? In a typical Spring Boot application, we implement the web layer as `@RestController` components.
 
-Continuing with the example set in the first article, let's examine a REST controller implementation:
+Let's look at an example and examine a REST controller implementation:
 
 ```java
 @RestController
@@ -80,7 +70,7 @@ public class OrderController {
 
 If we were to write a unit test for this controller, we could call the `pay()`, `getReceipt()`, and `handleOrderAlreadyPaid()` methods directly with some arguments. We could then make sure that the business logic in `OrderService` is called correctly and the controller returns the responses we expect.
 
-All good? Or is it? Let's take a closer look.
+All good. Or is it? Let's take a closer look.
 
 - We have annotated the endpoints with `@PostMapping` and `@GetMapping`. If we write a unit test, these annotations are not processed. How do we know that an HTTP request gets mapped to correct endpoints or that path variables get mapped with `@PathVariable`?
 
@@ -313,8 +303,4 @@ Spring controllers have a lot of responsibilities. To test the controllers thoro
 
 Unit testing the controllers won't cover all the responsibilities the controllers have. Spring Boot provides everything we need for integration testing the controllers using `@WebMvcTest`.
 
-In the following article of this mini-series, we will discuss integration testing our persistence layer of the application.
-
 You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-webmvctest).
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).

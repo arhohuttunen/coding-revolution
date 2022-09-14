@@ -8,29 +8,22 @@ categories:
 tags:
   - JUnit 5
   - Spring Boot
+  - Beginner
 image:
   focal_point: center
   preview_only: true
 ---
 
+Unit tests build the foundation of our testing strategy. It takes time to learn how to write them well.
+
+In this article, we will learn how to write unit tests for our Spring Boot applications. Most importantly, we will look at the details that make it possible to write good unit tests. In this article, we only discuss unit testing.
+
+If you prefer learning from videos, make sure to check out the following video:
+
 {{< youtube Ae5ukd136pc >}}
 <br/>
 
-In this article, we will learn how to write unit tests for our Spring Boot applications. Most importantly, we will look at the technical details necessary to write good unit tests.
-
-This article is the first one of the Spring Boot Testing mini-series. In this article, we only discuss unit testing. We will discuss integration testing in the upcoming articles.
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).
-
-## The Spring Boot Testing Mini-Series
-
-1. Spring Boot Unit Testing
-2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
-3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
-4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
-5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
-6. [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
-7. [Spring Boot Testing Strategy](/spring-boot-testing-strategy/)
+Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
 
 ## What Is a Unit Test?
 
@@ -252,8 +245,10 @@ With quite a simple change, we managed to make the test independent of Spring. T
 
 Using `@SpringBootTest` for writing plain unit tests can be considered harmful because they run slow. It is pretty easy to make our components unit-testable when we use constructor injection instead of field injection.
 
-In addition to unit testing, we should also write integration tests. In the following article of this mini-series, we will discuss integration testing our web layer of the application.
+In addition to unit testing, we should also write integration tests. To learn more about different ways to do integration testing with Spring Boot, check out the following articles:
+
+- [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
+- [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
+- [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
 
 You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-unit-testing).
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).

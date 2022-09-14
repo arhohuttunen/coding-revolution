@@ -14,24 +14,16 @@ image:
 
 ---
 
-{{< youtube NQHQ3YVMWaM >}}
-<br/>
-
-This article is the fourth part of the Spring Boot Testing mini-series. In this article, we look at how to write tests for JSON serialization and deserialization.
+In this article, we look at how to write tests for JSON serialization and deserialization.
 
 First, we will discuss why we might want to test serialization and deserialization separately. Then, we will look at how to write such tests.
 
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).
+If you prefer learning from videos, make sure to check out the following video:
 
-## The Spring Boot Testing Mini-Series
+{{< youtube NQHQ3YVMWaM >}}
+<br/>
 
-1. [Spring Boot Unit Testing](/spring-boot-unit-testing/)
-2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
-3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
-4. Testing Serialization With Spring Boot @JsonTest
-5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
-6. [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
-7. [Spring Boot Testing Strategy](/spring-boot-testing-strategy/)
+Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
 
 ## Isn't @WebMvcTest Enough?
 
@@ -41,7 +33,7 @@ If we already can test both these matters, why would we want to write separate t
 
 Well, we might want to write a custom serializer for some custom type, for example. We could use this type anywhere, so testing the serialization and deserialization of that type has value.
 
-Continuing with the example set in the previous articles, we want to start using `MonetaryAmount` instead of `BigDecimal` for presenting money. Let's look at the `Receipt` response, for example:
+Let's look at an example where we want to use `MonetaryAmount` for presenting money:
 
 ```java
 @Data
@@ -89,7 +81,7 @@ When we separate the concern of testing the serialization into its own tests, we
 
 ## Write an Integration Test With @JsonTest
 
-In previous articles, we have already seen how Spring Boot uses different annotations to autoconfigure beans for testing different slices of the application. To test the serialization and deserialization separately, we can use the `@JsonTest` annotation.
+We can use different annotations with Spring Boot to autoconfigure beans for testing different slices of the application. To test the serialization and deserialization separately, we can use the `@JsonTest` annotation.
 
 `@JsonTest` will autoconfigure beans for Jackson `ObjectMapper`, any custom `@JsonComponent`, and any Jackson `Module`s. Since Spring Boot only loads what’s needed, these tests are more lightweight than controller tests.
 
@@ -215,8 +207,4 @@ When dealing with custom types, we might need to write custom serializers or des
 
 Testing serialization and deserialization of custom types or formats is simple with `@JsonTest`. Spring Boot provides helpers like `JacksonTester` for verification.
 
-In the following article of this mini-series, we will discuss how to test REST calls to other services.
-
 You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-jsontest).
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).

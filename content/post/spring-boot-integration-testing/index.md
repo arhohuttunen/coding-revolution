@@ -13,24 +13,16 @@ image:
   preview_only: true
 ---
 
-{{< youtube N6ZaSNhzsGo >}}
-<br/>
-
-This article is the sixth part of the Spring Boot Testing mini-series. In this article, we look at how to write integration tests with `@SpringBootTest`.
+In this article, we look at how to write integration tests with `@SpringBootTest`.
 
 First, we will discuss different types of integration tests. Then, we will discover customization options for `@SpringBootTest` and how to write system tests with an embedded web server running.
 
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).
+If you prefer learning from videos, make sure to check out the following video:
 
-## The Spring Boot Testing Mini-Series
+{{< youtube N6ZaSNhzsGo >}}
+<br/>
 
-1. [Spring Boot Unit Testing](/spring-boot-unit-testing/)
-2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
-3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
-4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
-5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
-6. Spring Boot Integration Testing with @SpringBootTest
-7. [Spring Boot Testing Strategy](/spring-boot-testing-strategy/)
+Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
 
 ## What Is an Integration Test?
 
@@ -335,8 +327,4 @@ Whether we call a test a unit test or an integration test is not important. What
 
 Spring Boot provides test slice configurations for narrow integration tests. To write broader integration tests, we can use the `@SpringBootTest` annotation. There are plenty of options to customize the application context in Spring Boot tests, but we should use them cautiously. It's best to try to stick with the test slices and have a single configuration for the broader integration tests.
 
-In the final article of this mini-series, we will discuss an overall testing strategy and how to organize our application for testability.
-
 You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-integration-testing).
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).

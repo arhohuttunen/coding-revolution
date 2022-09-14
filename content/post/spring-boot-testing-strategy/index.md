@@ -12,19 +12,9 @@ image:
   focal_point: center
 ---
 
-This article is the seventh and final part of the Spring Boot Testing mini-series. In this article, we look at an overall Spring Boot testing strategy and how to organize the application for testability.
+In this article, we look at an overall Spring Boot testing strategy and how to organize the application for testability.
 
 First, we discuss ambiguous testing terminology and why to avoid debating what types of tests to write. Then we look at desirable characteristics of tests and examine a testing strategy that achieves those goals.
-
-## The Spring Boot Testing Mini-Series
-
-1. [Spring Boot Unit Testing](/spring-boot-unit-testing/)
-2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
-3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
-4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
-5. [Testing Spring WebClient REST Calls With MockWebServer](/spring-boot-webclient-mockwebserver/)
-6. [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
-7. Spring Boot Testing Strategy
 
 ## The Practical Test Pyramid
 
@@ -32,7 +22,7 @@ Before we begin, it is worth mentioning that there is a lack of clarity about un
 
 Some people call tests that are allowed to talk to real collaborators integration tests. Some call them **sociable unit tests**. Usually, the first group of people think unit tests are **solitary unit tests** that are not allowed to talk to collaborators. Essentially, these groups are talking about the same thing.
 
-The definition of integration test is ambiguous as well. As we saw in the previous article, there are both **narrow integration tests** and **broad integration tests** that either test part of the system or the system as a whole.
+The definition of integration test is ambiguous as well. There are both **narrow integration tests** and **broad integration tests** that either test part of the system or the system as a whole.
 
 {{< tweet user="searls" id="1393385209089990659" >}}
 
@@ -115,7 +105,7 @@ public class ExchangeRateClient {
 }
 ```
 
-Like we already saw in the previous articles, the Spring Boot test slices like `@WebMvcTest` and `@DataJpaTest` allow us to write focused tests for only a part of the application. These slices only load part of the application context, making the tests run faster.
+The Spring Boot test slices like `@WebMvcTest` and `@DataJpaTest` allow us to write focused tests for only a part of the application. These slices only load part of the application context, making the tests run faster.
 
 ## Simulate External Dependencies
 

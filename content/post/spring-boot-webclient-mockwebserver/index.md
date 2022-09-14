@@ -14,24 +14,16 @@ image:
   preview_only: true
 ---
 
-{{< youtube GBKY8QyfNDk >}}
-<br/>
-
-This article is the fifth part of the Spring Boot Testing mini-series. In this article, we look at how to write tests for WebClient REST calls.
+In this article, we look at how to write tests for WebClient REST calls.
 
 First, we will discuss what responsibilities a WebClient has. Then, we will look at what kind of tests we should write to test those responsibilities and how.
 
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).
+If you prefer learning from videos, make sure to check out the following video:
 
-## The Spring Boot Testing Mini-Series
+{{< youtube GBKY8QyfNDk >}}
+<br/>
 
-1. [Spring Boot Unit Testing](/spring-boot-unit-testing/)
-2. [Testing Web Controllers With Spring Boot @WebMvcTest](/spring-boot-webmvctest/)
-3. [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest/)
-4. [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest/)
-5. Testing Spring WebClient REST Calls With MockWebServer
-6. [Spring Boot Integration Testing with @SpringBootTest](/spring-boot-integration-testing/)
-7. [Spring Boot Testing Strategy](/spring-boot-testing-strategy/)
+Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
 
 ## Responsibilities of a WebClient
 
@@ -354,5 +346,3 @@ To mock the `WebClient` in other tests, we can first write a wrapper class for i
 In the following article of this mini-series, we will discuss how to write integration tests with `@SpringBootTest`.
 
 You can find the example code for this article on [GitHub](https://github.com/arhohuttunen/spring-boot-test-examples/tree/main/spring-boot-webclient-mockwebserver).
-
-If you are interested in a complete course on the topic, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. It's the course about Spring Boot testing I would have created had I been inclined (so I have no problem recommending it to you using my affiliate link).
