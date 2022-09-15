@@ -27,7 +27,7 @@ Also, if you are interested in a complete course on Spring Boot testing, check o
 
 ## Isn't @WebMvcTest Enough?
 
-In an earlier article of this mini-series, we briefly touched on testing the deserialization of requests and serialization of responses using `@WebMvcTest`. We saw how to use `MockMvc` to test the correctness of request deserialization and use JSONPath matchers to verify the serialized output of responses.
+It's possible to test the deserialization of requests and serialization of responses using `@WebMvcTest`. We can use `MockMvc` to test the correctness of request deserialization and use JSONPath matchers to verify the serialized output of responses.
 
 If we already can test both these matters, why would we want to write separate tests for them?
 
