@@ -2,7 +2,7 @@
 title: Spring Boot Integration Testing With @SpringBootTest
 date: 2021-06-14
 author: Arho Huttunen
-summary: Learn how to write integration tests with @SpringBootTest. Learn different options for customizing the application context for the tests.
+summary: Learn how to write Spring Boot integration tests with @SpringBootTest. Learn different options for customizing the application context for the tests.
 categories:
   - Testing
 tags:
@@ -25,8 +25,6 @@ If you prefer learning from videos, make sure to check out the following video:
 Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
 
 ## What Is an Integration Test?
-
-In the previous articles of this mini-series, we have already explored both unit testing and integration testing. We looked at the definition of a unit test and noticed that using `@SpringBootTest` makes the test an integration test. We also saw that some people believe that integration testing only means testing the entire application, which is not true.
 
 Before we go any further, let's define what we mean by integration testing. There are two different notions of what constitutes an integration test:
 
@@ -82,7 +80,7 @@ Conversely, if a broader test detects an error and there's no narrower test fail
 
 ### Use Custom Properties with @TestPropertySource
 
-`@SpringBootTest` sets up an in-memory database for tests by default. To override some of the Spring properties, we can use the `@TestPropertySource` annotation that we already saw in the previous article about testing the persistence layer:
+`@SpringBootTest` sets up an in-memory database for tests by default. To override some of the Spring properties, we can use the `@TestPropertySource` annotation:
 
 ```java
 @SpringBootTest
