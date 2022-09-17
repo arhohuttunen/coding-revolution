@@ -3,7 +3,7 @@ widget: blank
 weight: 10
 title: Spring Boot Testing Tutorial
 design:
-  columns: '2'
+  columns: '1'
 ---
 
 In this tutorial, we will take a look at writing tests for Spring Boot applications. We are going to use the testing support and additional testing libraries that Spring Boot provides.
