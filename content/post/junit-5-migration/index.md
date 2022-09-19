@@ -18,7 +18,7 @@ In this article, we will take a look at the steps required for migrating from JU
 
 This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
 
-{{% toc %}}
+{{< toc >}}
 
 ## Overview
 
