@@ -13,12 +13,14 @@ image:
   preview_only: true
 ---
 
-{{< youtube 0xSCbTYAiF0 >}}
-<br/>
-
 In this tutorial we will learn how to write JUnit 5 parameterized tests. The tutorial is structured so that it also answers most asked questions about parameterized tests.
 
 This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial/).
+
+If you prefer learning from videos, make sure to check out the following video:
+
+{{< youtube 0xSCbTYAiF0 >}}
+<br/>
 
 {{< toc >}}
 
@@ -31,7 +33,7 @@ We can write JUnit 5 parameterized tests just like regular JUnit 5 tests but hav
 We will also have to declare an argument source for the test.
 We declare these argument sources with different argument source annotations.
 
-## Do you only need one argument?
+## Single Parameter with @ValueSource
 
 The simplest argument source is the `@ValueSource` argument source.
 It lets us specify an array of literals of primitive types (either `short`, `byte`, `int`, `long`, `float`, `double`, `char`, `boolean`, `String`, or `Class`).
@@ -88,7 +90,7 @@ void postRequestWithDifferentProtocols(Protocol protocol) {
 
 If we run the test, we can see that the test has been executed once per every value of the `Protocol` enumeration.
 
-## What about null values?
+## Null Value With @NullSource
 
 The `@ValueSource` annotation doesn't accept null values.
 
@@ -109,7 +111,7 @@ void nullEmptyAndBlankStrings(String text) {
 
 It is also possible to use `@NullAndEmptySource` which combines the two.
 
-## Do you need multiple arguments?
+## Multiple Parameters With @MethodSource
 
 The `@ValueSource` and `@EnumSource` annotations only work when our test method takes one argument.
 However, we often need more than that.
@@ -156,7 +158,7 @@ private static Stream<Arguments> monthNames() {
 }
 ```
 
-## Do you want to share your argument providers between tests?
+## Sharing Arguments With @ArgumentSource
 
 It is possible to refer to a method in another class in `@MethodSource`.
 We have to use the fully qualified name of the method name to do so.
@@ -204,7 +206,7 @@ void externalPalindromeMethodSource(String string) {
 }
 ```
 
-## Do you have a lot of data?
+## Multiple Parameters With @CsvSource
 
 The `@CsvSource` annotation allows us to use a list of comma-separated string values.
 Using the annotation makes it possible to provide multiple parameters to the test method in quite a compact way.
@@ -240,7 +242,7 @@ void readTasks(String title, Status status, LocalDate date) {
 }
 ```
 
-### How to provide empty CSV arguments?
+### Empty CSV Parameters
 
 If `@CsvSource` has an empty value, JUnit 5 will always treat it as `null`.
 
@@ -272,7 +274,7 @@ void customNullArgument(String title, Status status, LocalDate date) {
 }
 ```
 
-### How to convert strings into different types?
+### Converting Strings to Different Types
 
 To better support use cases like `@CsvSource`, JUnit 5 does automatic argument conversion for primitive types, enums, and the date and time types from the `java.time` package.
 The conversion depends on the type of each method parameter.
@@ -327,7 +329,7 @@ public class Person {
 }
 ```
 
-### How to convert your custom types?
+### Converting Custom Types
 
 If we need to write a custom argument converter, we need to implement the `ArgumentConverter` interface.
 We can then annotate any parameters needing custom conversion with the `@ConvertWith` annotation.
@@ -390,7 +392,7 @@ void convertWithCustomHexConverter(int decimal, @HexValue int hex) {
 }
 ```
 
-### How to convert multiple arguments into a single object?
+### Converting Multiple Arguments Into Objects
 
 By default, arguments provided to a parameterized test correspond to a single method parameter.
 It is possible to aggregate these arguments into a single test method argument using a `ArgumentsAccessor`.
@@ -448,7 +450,7 @@ void aggregateArgumentsWithAnnotation(@CsvToTask Task task) {
 
 Now we can use the aggregator annotation anywhere we want to.
 
-## How to customize display names?
+## Customizing Parameterized Test Names
 
 By default, JUnit 5 parameterized tests' display names include the invocation index and String representation of all the parameters.
 However, we can customize the display name via the name attribute of the `@ParameterizedTest` annotation.
