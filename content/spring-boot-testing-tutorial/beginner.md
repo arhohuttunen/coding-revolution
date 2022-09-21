@@ -1,10 +1,13 @@
 ---
 widget: blank
 weight: 20
-title: <i class="fa-solid fa-leaf"></i> Getting Started With Spring Boot Testing
+title: <i class="fa-solid fa-leaf"></i> Spring Boot Testing Basics
 design:
 columns: '2'
 ---
+
+
+&nbsp; >> [Introduction to Testing Spring Boot Applications](/spring-boot-testing-introduction)
 
 &nbsp; >> [Spring Boot Unit Testing](/spring-boot-unit-testing)
 
