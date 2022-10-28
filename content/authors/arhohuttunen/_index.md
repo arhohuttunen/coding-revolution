@@ -31,7 +31,7 @@ education:
 social:
 - icon: youtube
   icon_pack: fab
-  link: https://www.youtube.com/channel/UCYxW02yOkWqV3nZTUBMfYzg
+  link: https://youtube.com/@codewitharho
 - icon: twitter
   icon_pack: fab
   link: https://www.twitter.com/ArhoHuttunen

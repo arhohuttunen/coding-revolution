@@ -10,7 +10,7 @@ design:
     #gradient_end: '#2b94c3'
     #text_color_light: true
 cta:
-  url: https://www.youtube.com/channel/UCYxW02yOkWqV3nZTUBMfYzg
+  url: https://youtube.com/@codewitharho
   label: Code With Arho
   icon_pack: fab
   icon: youtube
