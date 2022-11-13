@@ -35,6 +35,9 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://www.twitter.com/ArhoHuttunen
+- icon: mastodon
+  icon_pack: fab
+  link: https://fosstodon.org/@arhohuttunen
 - icon: github
   icon_pack: fab
   link: https://github.com/arhohuttunen
