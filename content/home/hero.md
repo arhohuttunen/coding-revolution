@@ -11,7 +11,7 @@ design:
     #text_color_light: true
 cta:
   url: https://youtube.com/@codewitharho
-  label: Code With Arho
+  label: Visit My Channel
   icon_pack: fab
   icon: youtube
 cta_alt:
