@@ -15,8 +15,8 @@ cta:
   icon_pack: fab
   icon: youtube
 cta_alt:
-  url: post/
-  label: Read the blog
+  url: testimonials/
+  label: Check out the wall of love
 cta_note:
   label: Check out my YouTube channel if you prefer video tutorials.
 ---

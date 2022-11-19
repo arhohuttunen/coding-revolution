@@ -39,3 +39,11 @@ div.alert {
     color: #55779a;
   }
 }
+
+// Testimonials
+.testimonials.card-columns {
+  column-count: 1;
+  @media (min-width: 992px) { // desktop
+    column-count: 3;
+  }
+}
