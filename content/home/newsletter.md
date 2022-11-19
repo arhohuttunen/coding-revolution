@@ -17,7 +17,7 @@ active: true
 
 Join the curious crowd and get exclusive tips on how to become a better software developer.
 
-<script async data-uid="fe5095dbe3" src="https://arhohuttunen.ck.page/fe5095dbe3/index.js"></script>
+<script async data-uid="c5699c15a9" src="https://arhohuttunen.ck.page/c5699c15a9/index.js"></script>
 
 <small>No spam, sales, or ads. Unsubscribe at any time.</small>
 
