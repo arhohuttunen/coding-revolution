@@ -2,10 +2,10 @@
 widget: blank
 weight: 20
 title: <i class="fa-solid fa-leaf"></i> Spring Boot Testing Basics
+subtitle: Start here
 design:
 columns: '2'
 ---
-
 
 &nbsp; >> [Introduction to Testing Spring Boot Applications](/spring-boot-testing-introduction)
 
@@ -15,10 +15,4 @@ columns: '2'
 
 &nbsp; >> [Testing the Persistence Layer With Spring Boot @DataJpaTest](/spring-boot-datajpatest)
 
-&nbsp; >> [Testing Serialization With Spring Boot @JsonTest](/spring-boot-jsontest)
-
-&nbsp; >> [Testing Spring Boot WebClient With MockWebServer](/spring-boot-webclient-mockwebserver)
-
 &nbsp; >> [Spring Boot Integration Testing With @SpringBootTest](/spring-boot-integration-testing)
-
-&nbsp; >> [Spring Boot Testing Strategy](/spring-boot-testing-strategy)
