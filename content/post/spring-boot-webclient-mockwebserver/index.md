@@ -1,7 +1,8 @@
 ---
 title: Testing Spring Boot WebClient With MockWebServer
 date: 2021-05-22
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Mocking the Spring Boot WebClient can be difficult. Learn how to replace the remote service with a mock service using MockWebServer.
 categories:
   - Testing

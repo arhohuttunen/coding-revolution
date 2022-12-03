@@ -1,7 +1,8 @@
 ---
 title: Testing Spring Security
 date: 2022-11-20
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Spring Security has good support for MockMvc and WebTestClient. Learn to test authentication and authorization of Spring Boot applications.
 categories:
   - Testing

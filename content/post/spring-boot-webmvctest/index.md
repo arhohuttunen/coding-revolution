@@ -1,7 +1,8 @@
 ---
 title: Testing Web Controllers With Spring Boot @WebMvcTest
 date: 2021-04-07
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Spring Boot web controllers have a lot of responsibilities. Learn how to test those responsibilities using @WebMvcTest.
 categories:
   - Testing

@@ -1,7 +1,8 @@
 ---
 title: "JUnit 5 Nested Tests: Grouping Related Tests Together"
 date: 2021-03-18
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Learn how to write JUnit 5 nested tests. Learn how to provide a hierarchical structure to describe relationships between the tests.
 categories:
   - Testing

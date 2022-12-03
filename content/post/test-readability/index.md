@@ -2,7 +2,8 @@
 title: How to Make Your Tests Readable
 subtitle: Document Behavior With Self-Verifying Executable Specifications
 date: 2021-03-07
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: In this article, we will learn different ways to improve test readability. Tests document how the system should behave. They also act as self-verifying executable specifications.
 categories:
   - Testing

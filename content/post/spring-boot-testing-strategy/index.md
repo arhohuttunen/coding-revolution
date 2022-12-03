@@ -1,7 +1,8 @@
 ---
 title: Spring Boot Testing Strategy
 date: 2022-05-07
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Avoid debating what types of test to write and focus on desirable characteristics. Learn a testing strategy with those goals.
 categories:
   - Testing

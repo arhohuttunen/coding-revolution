@@ -1,7 +1,8 @@
 ---
 title: Introduction to Testing Spring Boot Applications
 date: 2022-09-20
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Find out where to start learning to test your Spring Boot applications.
 categories:
   - Testing

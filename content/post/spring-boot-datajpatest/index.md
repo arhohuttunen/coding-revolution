@@ -1,7 +1,8 @@
 ---
 title: Testing the Persistence Layer With Spring Boot @DataJpaTest
 date: 2021-05-02
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Learn how to test Spring Boot repositories using @DataJpaTest. Learn what should be tested on the persistence layer and how.
 categories:
   - Testing

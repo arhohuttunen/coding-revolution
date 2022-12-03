@@ -1,7 +1,8 @@
 ---
 title: Spring Boot Integration Testing With @SpringBootTest
 date: 2021-06-14
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Learn how to write Spring Boot integration tests with @SpringBootTest. Learn different options for customizing the application context for the tests.
 categories:
   - Testing

@@ -2,7 +2,8 @@
 title: JUnit 5 With Kotlin for Java Developers
 subtitle: Crash course for converting your JUnit 5 Java Tests into Kotlin
 date: 2019-04-14
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Learn the differences between writing JUnit 5 tests in Kotlin and Java. Learn to configure JUnit 5 in the build script using Gradle Kotlin DSL.
 categories:
   - Testing

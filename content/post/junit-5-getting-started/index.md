@@ -1,7 +1,8 @@
 ---
 title: "Getting Started with JUnit 5: Writing Your First Test"
 date: 2019-04-19
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Learn how to write and run a simple JUnit 5 test. Setup preconditions, interact with the object we want to test, and verify that it behaves like expected.
 categories:
   - Testing

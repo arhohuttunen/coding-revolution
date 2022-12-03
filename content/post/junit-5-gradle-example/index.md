@@ -2,7 +2,8 @@
 title: JUnit 5 Gradle Example
 subtitle: Running Tests with Gradle
 date: 2018-01-01
-author: Arho Huttunen
+authors:
+  - arhohuttunen
 summary: Learn how to get the required dependencies for writing JUnit 5 tests with Gradle. Also, learn how to configure the JUnit Gradle plugin to run the tests.
 categories:
   - Testing
