@@ -22,8 +22,6 @@ Spring Security integrates well with the Spring Web MVC and Spring WebFlux frame
 
 {{< toc >}}
 
-Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
-
 ## Secure a Spring MVC Application
 
 Let's start with a simple application that manages customers. We want to create, get, and delete customers.

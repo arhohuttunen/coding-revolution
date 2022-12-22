@@ -25,8 +25,6 @@ If you prefer learning from videos, make sure to check out the following video:
 {{< youtube NQHQ3YVMWaM >}}
 <br/>
 
-Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
-
 ## Isn't @WebMvcTest Enough?
 
 It's possible to test the deserialization of requests and serialization of responses using `@WebMvcTest`. We can use `MockMvc` to test the correctness of request deserialization and use JSONPath matchers to verify the serialized output of responses.

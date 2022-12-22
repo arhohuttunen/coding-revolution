@@ -24,8 +24,6 @@ If you prefer learning from videos, make sure to check out the following video:
 {{< youtube N6ZaSNhzsGo >}}
 <br/>
 
-Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
-
 ## What Is an Integration Test?
 
 Before we go any further, let's define what we mean by integration testing. There are two different notions of what constitutes an integration test:

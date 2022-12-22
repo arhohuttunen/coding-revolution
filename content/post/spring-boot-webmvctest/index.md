@@ -24,8 +24,6 @@ If you prefer learning from videos, make sure to check out the following video:
 {{< youtube NW8i2gna4qA >}}
 <br/>
 
-Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
-
 ## Is Unit Testing Enough?
 
 Unit testing is the foundation of a solid test strategy. Unit tests are fast and independent and provide fast and reliable feedback.

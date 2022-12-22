@@ -26,8 +26,6 @@ If you prefer learning from videos, make sure to check out the following video:
 {{< youtube GBKY8QyfNDk >}}
 <br/>
 
-Also, if you are interested in a complete course on Spring Boot testing, check out [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. You can support me by buying through that link because I get a share.
-
 ## What is Spring WebClient?
 
 We can use Spring `WebClient` to call remote REST services. It is a non-blocking alternative to the Spring `RestTemplate`. Even though `WebClient` is reactive, it also supports synchronous operations by blocking.

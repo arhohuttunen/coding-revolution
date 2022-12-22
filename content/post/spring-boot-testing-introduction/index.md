@@ -123,5 +123,3 @@ To learn more about `@SpringBootTest` take a look at the [Spring Boot Integratio
 ## Next Steps
 
 This is only the start but will give us a solid foundation to get started on testing our Spring Boot applications. Once we know the basics of writing unit and integration tests there is more to explore.
-
-If you want to avoid a steep learning curve without spending too much time searching for information, check out the [Testing Spring Boot Applications Masterclass](https://transactions.sendowl.com/stores/13745/226726) by Philip Riecks. If you buy through the link I will get a share, but I only recommend it because I think it's a great package.
