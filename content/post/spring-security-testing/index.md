@@ -97,7 +97,8 @@ class CustomerControllerTests {
 ```
 
 {{% callout warning %}}
-If running the application denies access to an endpoint but our tests are not doing the same, it’s likely that we forgot the security configuration import.
+
+ If running the application denies access to an endpoint but our tests are not doing the same, it’s likely that we forgot the security configuration import.
 
 This can be hard to spot unless we have tests that test for a forbidden or unauthorized status code.
 {{% /callout %}}
@@ -242,8 +243,7 @@ Once `MockMvc` has been setup, there is nothing different in using it compared t
 {{% callout note %}}
 **Additional reading:**
 
-:pencil2: [Spring Boot Integration Testing With @SpringBootTest
-](/spring-boot-integration-testing/)
+:pencil2: [Spring Boot Integration Testing With @SpringBootTest](/spring-boot-integration-testing/)
 {{% /callout %}}
 
 ## Set Up MockMvc WebTestClient in @SpringBootTest With Security
@@ -287,7 +287,6 @@ If we try to auto-wire `WebTestClient`, and try to call `mutateWith(csrf())`, te
 
 `Cannot invoke "org.springframework.web.server.adapter.WebHttpHandlerBuilder.filters(java.util.function.Consumer)" because "httpHandlerBuilder" is null`
 {{% /callout %}}
-
 
 Since it's an end to end test, instead of mocking the authentication, we might want to provide the authentication headers instead.
 
