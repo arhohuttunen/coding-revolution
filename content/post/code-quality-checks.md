@@ -4,11 +4,7 @@ date: 2016-06-13
 authors:
   - arhohuttunen
 categories:
-  - Programming
-tags:
-  - Clean code
-  - Code review
-  - Static analysis
+  - Software Craftsmanship
 image:
   filename: stock/detective-smoking-pipe.jpg
 ---

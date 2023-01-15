@@ -5,11 +5,9 @@ authors:
   - arhohuttunen
 summary: Sometimes we need to customize serialization of properties in Spring. Learn how to test JSON serialization with Spring Boot @JsonTest.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
-  - Integration testing
+tags:
+  - testing
 image:
   focal_point: center
   preview_only: true

@@ -4,9 +4,9 @@ date: 2016-02-01
 authors:
   - arhohuttunen
 categories:
-  - Testing
+  - Software Craftsmanship
 tags:
-  - Clean code
+  - testing
 image:
   filename: stock/home-on-building-blocks-surrounded-by-ruins-of-house-that-collapsed.jpg
 ---

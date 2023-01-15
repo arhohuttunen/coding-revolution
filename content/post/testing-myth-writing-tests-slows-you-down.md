@@ -4,9 +4,9 @@ date: 2016-01-18
 authors:
   - arhohuttunen
 categories:
-  - Testing
+  - Software Craftsmanship
 tags:
-  - Clean code
+  - testing
 image:
   filename: stock/snail-race.jpg
 ---

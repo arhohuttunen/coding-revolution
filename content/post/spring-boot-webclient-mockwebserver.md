@@ -5,12 +5,9 @@ authors:
   - arhohuttunen
 summary: Mocking the Spring Boot WebClient can be difficult. Learn how to replace the remote service with a mock service using MockWebServer.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
-  - Spring WebFlux
-  - Integration testing
+tags:
+  - testing
 featured: true
 image:
   focal_point: center

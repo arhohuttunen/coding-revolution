@@ -6,10 +6,9 @@ authors:
   - arhohuttunen
 summary: What are the DRY and DAMP principles? Why do people consider DRY and DAMP in tests contradictory and how can we achieve both?
 categories:
-  - Testing
+  - Software Craftsmanship
 tags:
-  - Maintainability
-  - Readability
+  - testing
 image:
   focal_point: bottom
   preview_only: true

@@ -4,9 +4,7 @@ date: 2016-01-06
 authors:
   - arhohuttunen
 categories:
-  - Programming
-tags:
-  - Git
+  - Software Craftsmanship
 image:
   filename: stock/personal-computer-showing-development-process.jpg
 ---

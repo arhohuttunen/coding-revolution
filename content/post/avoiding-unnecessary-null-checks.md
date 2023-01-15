@@ -4,11 +4,7 @@ date: 2015-09-21
 authors:
   - arhohuttunen
 categories:
-  - Programming
-tags:
-  - Refactoring
-  - Clean code
-  - Anti pattern
+  - Software Craftsmanship
 image:
   filename: stock/headless-pensive-businessman.jpg
 ---

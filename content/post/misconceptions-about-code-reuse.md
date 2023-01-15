@@ -4,10 +4,7 @@ date: 2015-06-29
 authors:
   - arhohuttunen
 categories:
-  - Programming
-tags:
-  - Clean code
-  - Anti pattern
+  - Software Craftsmanship
 image:
   filename: stock/mature-caucasian-man-scratching-head.jpg
 ---

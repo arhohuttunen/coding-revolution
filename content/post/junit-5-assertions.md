@@ -5,9 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to verify test results using JUnit 5 assertions. Learn the basic assertion methods, error message customization and assertion grouping.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
+  - testing
 image:
   filename: edited/junit-5-checklist-with-computer.png
 ---

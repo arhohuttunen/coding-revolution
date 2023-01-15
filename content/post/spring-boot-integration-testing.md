@@ -5,11 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to write Spring Boot integration tests with @SpringBootTest. Learn different options for customizing the application context for the tests.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
-  - Integration testing
+tags:
+  - testing
 image:
   focal_point: center
   preview_only: true

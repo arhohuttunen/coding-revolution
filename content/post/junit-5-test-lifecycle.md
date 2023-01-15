@@ -5,9 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to run code before and after each test or all tests in the test class. Also learn the execution order of lifecycle methods in different cases.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
+  - testing
 image:
   filename: edited/junit-5-chart-diagram.png
 ---

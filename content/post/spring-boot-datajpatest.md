@@ -5,12 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to test Spring Boot repositories using @DataJpaTest. Learn what should be tested on the persistence layer and how.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
-  - Spring Data JPA
-  - Integration testing
+tags:
+  - testing
 featured: true
 image:
   focal_point: center

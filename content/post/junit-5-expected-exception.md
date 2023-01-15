@@ -5,9 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to assert an exception is thrown using JUnit 5. Also, learn how to check the error message of the thrown exception.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
+  - testing
 image:
   filename: edited/junit-5-laptop-with-service-error.png
 ---

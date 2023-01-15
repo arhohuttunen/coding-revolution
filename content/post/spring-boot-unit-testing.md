@@ -5,11 +5,9 @@ authors:
   - arhohuttunen
 summary: It takes time to learn how to write good unit tests. Learn how to write unit tests for Spring Boot applications.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
-  - Unit testing
+tags:
+  - testing
 image:
   focal_point: center
   preview_only: true

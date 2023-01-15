@@ -6,10 +6,9 @@ authors:
   - arhohuttunen
 summary: Learn the differences between writing JUnit 5 tests in Kotlin and Java. Learn to configure JUnit 5 in the build script using Gradle Kotlin DSL.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Kotlin
+tags:
+  - testing
 image:
   focal_point: center
   preview_only: true

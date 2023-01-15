@@ -7,9 +7,7 @@ authors:
 categories:
   - Book Reviews
 tags:
-  - DevOps
-  - Lean
-  - Agile
+  - agile
 image:
   filename: stock/devops-matrix-cubics.jpg
 ---

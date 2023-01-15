@@ -5,9 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to write and run a simple JUnit 5 test. Setup preconditions, interact with the object we want to test, and verify that it behaves like expected.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
+  - testing
 image:
   filename: edited/junit-5-handwriting-text-get-started.png
 ---

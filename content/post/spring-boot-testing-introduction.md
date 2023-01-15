@@ -5,10 +5,9 @@ authors:
   - arhohuttunen
 summary: Find out where to start learning to test your Spring Boot applications.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
+tags:
+  - testing
 ---
 
 When learning to test Spring Boot applications it can be a difficult task to know where to begin. The easiest way to get started is the Spring Boot Starter Test which allows us to start writing tests right away. The starter includes a number of utilities and libraries to help with testing applications. 

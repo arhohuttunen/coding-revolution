@@ -5,10 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to get the required dependencies for writing JUnit 5 tests with Maven. Also, learn how to configure the Maven Surefire plugin to run the tests.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
-  - Maven
+  - testing
 image:
   filename: edited/junit-5-maven.png
 ---

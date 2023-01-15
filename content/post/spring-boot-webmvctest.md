@@ -5,12 +5,9 @@ authors:
   - arhohuttunen
 summary: Spring Boot web controllers have a lot of responsibilities. Learn how to test those responsibilities using @WebMvcTest.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
-  - Spring MVC
-  - Integration testing
+tags:
+  - testing
 featured: true
 image:
   focal_point: center

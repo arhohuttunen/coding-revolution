@@ -5,10 +5,9 @@ authors:
   - arhohuttunen
 summary: Avoid debating what types of test to write and focus on desirable characteristics. Learn a testing strategy with those goals.
 categories:
-  - Testing
-tags:
-  - JUnit 5
   - Spring Boot
+tags:
+  - testing
 image:
   focal_point: center
 ---

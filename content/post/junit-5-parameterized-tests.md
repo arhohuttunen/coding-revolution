@@ -5,9 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to write JUnit 5 parameterized tests. Learn answers to some of the most asked questions about parameterized tests.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
+  - testing
 featured: true
 image:
   focal_point: center

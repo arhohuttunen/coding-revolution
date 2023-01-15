@@ -5,10 +5,9 @@ authors:
   - arhohuttunen
 summary: Learn how to use the Mockito mocking framework with JUnit 5. Learn both the test framework independent way, and using the Mockito JUnit 5 extension.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
-  - Mockito
+  - testing
 featured: true
 image:
   focal_point: top

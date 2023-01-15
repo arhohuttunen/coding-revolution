@@ -4,10 +4,7 @@ date: 2015-05-22
 authors:
   - arhohuttunen
 categories:
-  - Programming
-tags:
-  - Refactoring
-  - Clean code
+  - Software Craftsmanship
 image:
   filename: stock/broken-windows-in-an-abandoned-house.jpg
 ---

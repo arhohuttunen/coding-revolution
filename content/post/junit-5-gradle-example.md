@@ -6,10 +6,9 @@ authors:
   - arhohuttunen
 summary: Learn how to get the required dependencies for writing JUnit 5 tests with Gradle. Also, learn how to configure the JUnit Gradle plugin to run the tests.
 categories:
-  - Testing
+  - Java
 tags:
-  - JUnit 5
-  - Gradle
+  - testing
 image:
   filename: edited/junit-5-gradle.png
 ---
