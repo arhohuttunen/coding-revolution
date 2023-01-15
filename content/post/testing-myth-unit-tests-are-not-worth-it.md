@@ -20,7 +20,6 @@ This kind of thinking is probably the result of following kind of experiences:
 - Unit tests are not finding any real bugs.
 
 It is not that writing unit tests is somehow fundamentally laborious. These kind of experiences are symptoms of something else.
-<!--more-->
 
 ## Serving a purpose
 
@@ -39,7 +38,7 @@ When you finish your implementation you end up with a nice regression test suite
 
 **Most value from unit tests is gained in the act of writing tests while writing the code**. This is why adding tests afterwards may feel like not getting enough results for the effort.
 
-### Possible missteps
+## Possible missteps
 
 Having bad experiences from unit testing can be caused by misunderstanding. Following things may attribute to thinking that unit tests are not worth writing:
 
