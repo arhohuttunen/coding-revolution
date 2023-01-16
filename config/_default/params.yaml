@@ -105,6 +105,6 @@ extensions:
     # Enable if you use the Portfolio widget or Publication filter
     enable: true
   academicons:
-    enable: true
+    enable: false
 
 i_am_a_sponsor: true
