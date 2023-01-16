@@ -20,7 +20,7 @@ First, we will discuss what responsibilities a WebClient has. Then, we will look
 
 If you prefer learning from videos, make sure to check out the following video:
 
-{{< youtube GBKY8QyfNDk >}}
+<lite-youtube videoid="GBKY8QyfNDk"></lite-youtube>
 <br/>
 
 ## What is Spring WebClient?

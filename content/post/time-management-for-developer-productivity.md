@@ -14,7 +14,7 @@ image:
   filename: stock/productivity-printed-book.jpg
 ---
 
-{{< youtube 59xEI24uK6M >}}
+<lite-youtube videoid="59xEI24uK6M"></lite-youtube>
 <br/>
 
 If you often feel like there’s too much to do and too little time to do it, you are definitely not alone. We are constantly interrupted, and we get distracted from our productive work.

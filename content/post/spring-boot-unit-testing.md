@@ -19,7 +19,7 @@ In this article, we will learn how to write unit tests for our Spring Boot appli
 
 If you prefer learning from videos, make sure to check out the following video:
 
-{{< youtube Ae5ukd136pc >}}
+<lite-youtube videoid="Ae5ukd136pc"></lite-youtube>
 <br/>
 
 ## What Is a Unit Test?

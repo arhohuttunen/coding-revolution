@@ -20,7 +20,7 @@ First, we will discuss what we should be testing in the persistence layer. Then,
 
 If you prefer learning from videos, make sure to check out the following video:
 
-{{< youtube wRpxKDi79mk >}}
+<lite-youtube videoid="wRpxKDi79mk"></lite-youtube>
 <br/>
 
 ## What To Test?

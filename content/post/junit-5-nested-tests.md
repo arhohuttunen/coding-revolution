@@ -13,7 +13,7 @@ image:
   filename: edited/junit-5-brackets.png
 ---
 
-{{< youtube TsCew_Oq6uE >}}
+<lite-youtube videoid="TsCew_Oq6uE"></lite-youtube>
 <br/>
 
 In this tutorial, we will learn how to write JUnit 5 nested tests. We will learn how to provide a hierarchical structure to the tests that describe relationships between the tests.

@@ -18,7 +18,7 @@ In this article, we look at how to test Spring Boot MVC controllers. First, we w
 
 If you prefer learning from videos, make sure to check out the following video:
 
-{{< youtube NW8i2gna4qA >}}
+<lite-youtube videoid="NW8i2gna4qA"></lite-youtube>
 <br/>
 
 ## Is Unit Testing Enough?

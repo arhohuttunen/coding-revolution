@@ -15,7 +15,7 @@ image:
   filename: edited/junit-5-kotlin.png
 ---
 
-{{< youtube 94KTm9b00VM >}}
+<lite-youtube videoid="94KTm9b00VM"></lite-youtube>
 <br/>
 
 In this article, we will learn the differences between writing JUnit 5 tests in Kotlin and Java. We will also learn how to configure JUnit 5 in our build script using the Gradle Kotlin DSL.

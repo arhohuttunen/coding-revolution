@@ -21,7 +21,7 @@ This article is part of the [JUnit 5 Tutorial](/junit-5-tutorial).
 
 If you prefer learning from videos, make sure to check out the following video:
 
-{{< youtube 0xSCbTYAiF0 >}}
+<lite-youtube videoid="0xSCbTYAiF0"></lite-youtube>
 <br/>
 
 {{< toc >}}

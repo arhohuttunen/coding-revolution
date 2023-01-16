@@ -19,7 +19,7 @@ First, we will discuss different types of integration tests. Then, we will disco
 
 If you prefer learning from videos, make sure to check out the following video:
 
-{{< youtube N6ZaSNhzsGo >}}
+<lite-youtube videoid="N6ZaSNhzsGo"></lite-youtube>
 <br/>
 
 ## What Is an Integration Test?
