@@ -6,7 +6,7 @@ title: Arho Huttunen
 superuser: true
 
 # Role/position
-role: Software Craftsman
+role: Software Crafter
 
 # Organizations/Affiliations
 organizations: []
