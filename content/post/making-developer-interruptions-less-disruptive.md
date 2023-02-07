@@ -21,7 +21,7 @@ In this article, we'll look at some approaches for making developer interruption
 
 In positive psychology, a flow state is a mental state in which a person is fully immersed in a task.[^1] When a person is in a flow state, they remain completely focused and may not notice the time passing. It is this kind of deep focus that we see ideal for solving hard problems.
 
-{{< figure src="/post/making-developer-interruptions-less-disruptive/geek-productivity-at-work.jpeg" caption="Geek productivity at work" theme="light" >}}
+{{< figure src="/post/making-developer-interruptions-less-disruptive/geek-productivity-at-work.jpeg" caption="Geek productivity at work" >}}
 
 It's very easy to relate to this because we have experienced it. We focus hard on a problem. Someone walks in and asks a completely unrelated question. Poof, we're completely thrown off track, and it takes time to regain focus.
 
@@ -41,7 +41,7 @@ And while we are waiting, what happens next? We take up on additional work. Now 
 
 According to psychologist Gerald Weinberg, each extra task or context switch eats up 20% of your productivity.[^2] That means that by the time we add a third task on our table, we waste nearly half of our time in context switching.
 
-{{< figure src="/post/making-developer-interruptions-less-disruptive/working-time-vs-multitasking.png" caption="Working time vs multitasking" theme="light" >}}
+{{< figure src="/post/making-developer-interruptions-less-disruptive/working-time-vs-multitasking.png" caption="Working time vs multitasking" >}}
 
 We loathe the idea of being interrupted, but willingly give up our right to concentrate by working the way we do. It's much easier to blame someone else than ourselves.
 

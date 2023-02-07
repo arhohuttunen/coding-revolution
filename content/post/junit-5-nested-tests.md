@@ -121,7 +121,7 @@ Compared to the non-nested example, there is a little better organization becaus
 
 Running from an IDE is where we start to see some additional benefits of adding a nested structure. Here we have the test results in IntelliJ IDEA.
 
-{{< figure src="/post/junit-5-nested-tests/junit-5-nested-test-intellij-idea.png" caption="Running a nested JUnit 5 test in IntelliJ IDEA" theme="light" >}}
+{{< figure src="/post/junit-5-nested-tests/junit-5-nested-test-intellij-idea.png" caption="Running a nested JUnit 5 test in IntelliJ IDEA" >}}
 
 The report already looks a bit better. Each of the nested classes can be expanded or collapsed, and we can focus on the results we want.
 
@@ -269,7 +269,7 @@ Modern IDEs also allow collapsing and expanding of complete blocks in the code, 
 
 Running the test from an IDE now shows how much more structure the test results have. Here is a test run from IntelliJ IDEA.
 
-{{< figure src="/post/junit-5-nested-tests/junit-5-nested-test-intellij-idea-2.png" caption="Running a nested JUnit 5 test in IntelliJ IDEA" theme="light" >}}
+{{< figure src="/post/junit-5-nested-tests/junit-5-nested-test-intellij-idea-2.png" caption="Running a nested JUnit 5 test in IntelliJ IDEA" >}}
 
 When we run the test from the command line, we can see that the output has more structure.
 

@@ -91,7 +91,7 @@ When using an IDE like IntelliJ IDEA we can just right click the test class and 
 
 Here we can see the results of running a passing JUnit 5 test in IntelliJ IDEA:
 
-{{< figure src="/post/junit-5-getting-started/junit-5-running-test-intellij-idea.png" caption="Running a JUnit 5 test in IntelliJ IDEA" theme="light" >}}
+{{< figure src="/post/junit-5-getting-started/junit-5-running-test-intellij-idea.png" caption="Running a JUnit 5 test in IntelliJ IDEA" >}}
 
 ### Running with Maven
 
