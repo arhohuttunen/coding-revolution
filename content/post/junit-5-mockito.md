@@ -72,7 +72,7 @@ Manual initialization can be a legit solution if we don't have many mocks.
 
 A declarative alternative to calling the `Mockito.mock()` method is to annotate a field as a mock with the `@Mock` annotation. We have to call a particular method to initialize the annotated objects.
 
-In Mockito 2 there is a `MockitoAnnotations.initMock()` method, which is deprecated and replaced with `MockitoAnnotations.openMocks()` in Mockito 3. The `MockitoAnnotations.openMocks()` method returns an instance of `AutoClosable` which can be used to close the resource after the test.
+In Mockito 2 there is a `MockitoAnnotations.initMocks()` method, which is deprecated and replaced with `MockitoAnnotations.openMocks()` in Mockito 3. The `MockitoAnnotations.openMocks()` method returns an instance of `AutoClosable` which can be used to close the resource after the test.
 
 ```java
 public class MockitoAnnotationTest {
