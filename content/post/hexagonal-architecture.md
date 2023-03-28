@@ -213,4 +213,4 @@ The main idea of hexagonal architecture is to separate business logic from the t
 
 On one side of the application, we create adapters that use the application interfaces. These can be, for example, controllers that drive the application. On the other side of the application, we create adapters that implement the application interfaces. These can be, for example, repositories that the application gets answers from.
 
-In the next article, we will look at how to implement hexagonal architecture in a Spring Boot application.
+In the [next article](/hexagonal-architecture-spring-boot), we will look at how to implement hexagonal architecture in a Spring Boot application.
