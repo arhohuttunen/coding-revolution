@@ -204,6 +204,10 @@ public class InMemoryOrders implements Orders {
 
 This allows for implementing the business logic without having to worry about persistence details at this point. In fact, when working iteratively, we could ship the first version of the application with these in-memory stubs.
 
+One thing to note here is that we don’t need interfaces for the primary ports! Having these interfaces available makes it easier to visualize the role of primary ports, but they are unnecessary. We only need interfaces for the secondary ports in order to invert the dependencies there.
+
+Interfaces with a single implementation are useless interfaces. Since our application core is not something that we would replace with another implementation, we could just expose the public methods of the concrete implementation as the primary ports. However, having these interfaces in place makes it more apparent what exactly is the boundary of the application.
+
 ### Acceptance Tests
 
 We can also use these in-memory stubs for testing and enable blazing fast tests. We can start by writing some acceptance tests for our use cases. When working in a BDD manner, this would be where we would start even before the implementation.
