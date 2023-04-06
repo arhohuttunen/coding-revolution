@@ -45,19 +45,18 @@ We can identify two primary actors: a customer making the order and a barista pr
 The `OrderingCoffee` and `PreparingCoffee` ports need to fulfill the requirements we have related to making an order and preparing coffee.
 
 ```java
-public interface OrderingCoffee {  
-    Order placeOrder(Order order);  
-    Order readOrder(UUID orderId);  
-    Order updateOrder(UUID orderId, Order order);  
-    void cancelOrder(UUID orderId);  
-    Payment payOrder(UUID orderId, CreditCard creditCard);  
-    Receipt readReceipt(UUID orderId);  
-    Order takeOrder(UUID orderId);  
+public interface OrderingCoffee {
+    Order placeOrder(Order order);
+    Order updateOrder(UUID orderId, Order order);
+    void cancelOrder(UUID orderId);
+    Payment payOrder(UUID orderId, CreditCard creditCard);
+    Receipt readReceipt(UUID orderId);
+    Order takeOrder(UUID orderId);
 }
 
-public interface PreparingCoffee {  
-    Order startPreparingOrder(UUID orderId);  
-    Order finishPreparingOrder(UUID orderId);  
+public interface PreparingCoffee {
+    Order startPreparingOrder(UUID orderId);
+    Order finishPreparingOrder(UUID orderId);
 }
 ```
 
@@ -372,15 +371,13 @@ Here, we have put the mapping code between the domain and the response in the re
 public record OrderResponse(
         Location location,
         List<OrderItemResponse> items,
-        BigDecimal cost,
-        Status status
+        BigDecimal cost
 ) {
     public static OrderResponse fromDomain(Order order) {
         return new OrderResponse(
                 order.getLocation(),
                 order.getItems().stream().map(OrderItemResponse::fromDomain).toList(),
-                order.getCost(),
-                order.getStatus()
+                order.getCost()
         );
     }
 }
