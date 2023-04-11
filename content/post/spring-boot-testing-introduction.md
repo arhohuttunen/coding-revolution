@@ -115,7 +115,7 @@ Even though we are running the test with the entire application we don't have to
 
 To learn more about `MockWebServer` take a look at the [Testing Spring Boot WebClient With MockWebServer](/spring-boot-webclient-mockwebserver) article.
 
-Some people think that your integration tests have to always test the entire application. As we already saw it's possible to write integration tests for smaller slices too. We can call tests that load the entire application context with `@SpringBooTest` **broad integration tests**.
+Some people think that your integration tests have to always test the entire application. As we already saw it's possible to write integration tests for smaller slices too. We can call tests that load the entire application context with `@SpringBootTest` **broad integration tests**.
 
 To learn more about `@SpringBootTest` take a look at the [Spring Boot Integration Testing](/spring-boot-integration-testing) article.
 
