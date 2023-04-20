@@ -235,6 +235,7 @@ One condition per test will make the test **more readable**. It will also help w
 Sometimes, to test behavior, we have to construct objects that require specific data to be present. However, this data may be irrelevant for testing the behavior. We call this the **Irrelevant Information** test smell.
 
 ```java
+@Test
 void newPersonIsUnverified() {
     Person person = new Person("John", "Doe", 15);
     assertEquals(Person.Status.UNVERIFIED, person.getStatus());
