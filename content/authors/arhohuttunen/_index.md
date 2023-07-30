@@ -34,7 +34,7 @@ social:
   link: https://youtube.com/@codewitharho
 - icon: mastodon
   icon_pack: fab
-  link: https://fosstodon.org/@arhohuttunen
+  link: https://mastodon.social/@arhohuttunen
 - icon: github
   icon_pack: fab
   link: https://github.com/arhohuttunen
