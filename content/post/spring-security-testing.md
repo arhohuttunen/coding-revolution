@@ -402,7 +402,7 @@ Again, if we don't want to use the `@WithMockUser` annotation, we can configure 
 
 In addition to providing a mock user we can use e.g. `mockJwt()` or `mockOAuth2Login()`.
 
-## Set Up WebFlux WebTestClient in @SpringBooTest With Security
+## Set Up WebFlux WebTestClient in @SpringBootTest With Security
 
 Moving on to end-to-end tests and the `@SpringBootTest`, the `WebTestClient` bean is not available by default. The client needs to be configured manually.
 
