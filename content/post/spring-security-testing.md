@@ -50,7 +50,7 @@ We probably don't want unauthorized people to create and delete customers, thoug
 ```java
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 public class SecurityConfiguration {
 }
 ```
