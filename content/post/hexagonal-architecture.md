@@ -113,7 +113,7 @@ In our case, this is a fancy way of saying the application should not directly d
 
 The `CoffeeShop` implementation should not depend on the `OrdersDatabaseAdapter` implementation directly, but it should use the `Orders` interface and let `OrdersDatabaseAdapter` implement that interface. This inverts the dependency and effectively reverses the relationship.
 
-We can also say that the `CoffeeShop` has a configurable dependency on the `Orders` interface, which is implemented by the `OrdersDatabaseAdapter`. Similarly, the `OrderController` has a configurable dependency on the `Orders` interface, implemented by the `CoffeeShop`. To configure these dependencies we can use dependency injection as an implementation pattern.
+We can also say that the `CoffeeShop` has a configurable dependency on the `Orders` interface, which is implemented by the `OrdersDatabaseAdapter`. Similarly, the `OrderController` has a configurable dependency on the `PlacingOrders` interface, implemented by the `CoffeeShop`. To configure these dependencies we can use dependency injection as an implementation pattern.
 
 ### Mapping in Adapters
 
